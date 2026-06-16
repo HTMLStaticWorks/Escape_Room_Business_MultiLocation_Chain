@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EscapeX - Modern Escape Room Experience</title>
+    <meta name="description" content="Book your next escape room adventure at EscapeX. Multiple locations, immersive themes.">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="bi bi-door-closed-fill me-2 fs-3 text-primary"></i> EscapeX
+            </a>
+            
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                <i class="bi bi-list fs-2" style="color: var(--text-color);"></i>
+            </button>
+
+            <!-- Desktop Menu -->
+            <div class="collapse navbar-collapse d-none d-lg-flex justify-content-between" id="desktopMenu">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home 1</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="404.html">404 Page</a></li>
+                    <li class="nav-item"><a class="nav-link" href="coming-soon.html">Coming Soon</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="login.html" class="btn-navbar-login">Login</a>
+                    <a href="register.html" class="btn-navbar-signup">Sign Up</a>
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="btn btn-link p-0 text-decoration-none" style="color: var(--text-color);">
+                        <i class="bi bi-sun fs-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" style="background-color: var(--header-bg); color: var(--text-color);">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title fw-bold text-primary">EscapeX</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav mb-4">
+                <li class="nav-item"><a class="nav-link fs-5 py-2" href="index.html">Home 1</a></li>
+                <li class="nav-item"><a class="nav-link fs-5 py-2" href="home-2.html">Home 2</a></li>
+                <li class="nav-item"><a class="nav-link fs-5 py-2" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link fs-5 py-2" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link fs-5 py-2" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link fs-5 py-2" href="pricing.html">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link fs-5 py-2" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link fs-5 py-2" href="404.html">404 Page</a></li>
+                <li class="nav-item"><a class="nav-link fs-5 py-2" href="coming-soon.html">Coming Soon</a></li>
+            </ul>
+            <div class="d-grid gap-2">
+                <a href="login.html" class="btn-navbar-login">Login</a>
+                <a href="register.html" class="btn-navbar-signup">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Section 1: Hero -->
+        <section class="hero-section d-flex align-items-center" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/escape-room-general.jpg') center/cover no-repeat, var(--tertiary-color);">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <span class="badge bg-primary text-dark mb-3 px-3 py-2 rounded-pill fs-6">Multiple Locations Nationwide</span>
+                        <h1 class="display-3 fw-bolder mb-4">Can You Escape The Room in 60 Minutes?</h1>
+                        <p class="lead mb-4 px-lg-5">Immersive puzzles, thrilling storylines, and high-tech rooms designed for ultimate teamwork and adrenaline.</p>
+                        <div class="d-flex justify-content-center gap-3 flex-wrap">
+                            <a href="services.html" class="btn btn-primary-custom btn-lg px-5">Book Now</a>
+                            <a href="contact.html" class="btn btn-secondary-custom btn-lg px-5">Find Location</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Features -->
+        <section class="py-4 my-3">
+            <div class="container">
+                <div class="row g-4 text-center">
+                    <div class="col-md-4">
+                        <div class="custom-card h-100">
+                            <div class="card-body">
+                                <img src="assets/images/blog1.jpg" alt="60 Minutes" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;" class="mb-3 border border-primary border-2">
+                                <h3>60 Minutes</h3>
+                                <p class="text-muted">You have exactly one hour to solve the puzzles and escape.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="custom-card h-100">
+                            <div class="card-body">
+                                <img src="assets/images/team1.jpg" alt="2-8 Players" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;" class="mb-3 border border-primary border-2">
+                                <h3>2-8 Players</h3>
+                                <p class="text-muted">Perfect for date nights, friends, or corporate team building.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="custom-card h-100">
+                            <div class="card-body">
+                                <img src="assets/images/map.jpg" alt="Locations" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;" class="mb-3 border border-primary border-2">
+                                <h3>5+ Locations</h3>
+                                <p class="text-muted">Find an EscapeX venue near you across the country.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Popular Rooms -->
+        <section class="py-4" style="background-color: var(--card-bg);">
+            <div class="container py-4">
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold">Our Most Popular Rooms</h2>
+                    <p class="text-muted">Choose your adventure</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card bg-transparent border-secondary h-100" style="border: 1px solid var(--tertiary-color);">
+                            <!-- Room Image -->
+                            <img src="assets/images/room1.jpg" class="card-img-top" alt="The Heist" style="height: 200px; object-fit: cover; border-radius: 5px 5px 0 0;">
+                            <div class="card-body">
+                                <h4>The Heist</h4>
+                                <div class="d-flex justify-content-between mb-3 text-muted small">
+                                    <span><i class="bi bi-bar-chart-fill text-warning"></i> Hard</span>
+                                    <span><i class="bi bi-person-fill"></i> 4-8</span>
+                                </div>
+                                <p>Break into the high-security vault and steal the diamond before the cops arrive.</p>
+                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-2 w-100" style="color: var(--primary-color); border-color: var(--primary-color);">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Repeat for 2 more rooms -->
+                    <div class="col-md-4">
+                        <div class="card bg-transparent border-secondary h-100" style="border: 1px solid var(--tertiary-color);">
+                            <img src="assets/images/room2.jpg" class="card-img-top" alt="Zombie Outbreak" style="height: 200px; object-fit: cover; border-radius: 5px 5px 0 0;">
+                            <div class="card-body">
+                                <h4>Zombie Outbreak</h4>
+                                <div class="d-flex justify-content-between mb-3 text-muted small">
+                                    <span><i class="bi bi-bar-chart-fill text-danger"></i> Extreme</span>
+                                    <span><i class="bi bi-person-fill"></i> 2-6</span>
+                                </div>
+                                <p>Find the cure in the abandoned lab before the horde breaks in.</p>
+                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-2 w-100" style="color: var(--primary-color); border-color: var(--primary-color);">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-transparent border-secondary h-100" style="border: 1px solid var(--tertiary-color);">
+                            <img src="assets/images/room3.jpg" class="card-img-top" alt="Asylum" style="height: 200px; object-fit: cover; border-radius: 5px 5px 0 0;">
+                            <div class="card-body">
+                                <h4>Asylum</h4>
+                                <div class="d-flex justify-content-between mb-3 text-muted small">
+                                    <span><i class="bi bi-bar-chart-fill text-success"></i> Medium</span>
+                                    <span><i class="bi bi-person-fill"></i> 2-8</span>
+                                </div>
+                                <p>Escape the haunted asylum. Do you have what it takes?</p>
+                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-2 w-100" style="color: var(--primary-color); border-color: var(--primary-color);">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="services.html" class="btn btn-primary-custom">View All Rooms</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Video / Promo -->
+        <section class="py-4 my-3 text-center">
+            <div class="container">
+                <div class="p-4 rounded-4" style="background: linear-gradient(45deg, var(--tertiary-color), var(--secondary-color));">
+                    <h2 class="fw-bold text-white mb-4">Watch The Experience</h2>
+                    <div class="position-relative d-inline-block cursor-pointer">
+                        <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px);">
+                            <i class="bi bi-play-fill text-white" style="font-size: 3rem; margin-left: 5px;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Locations Quick Links -->
+        <section class="py-4">
+            <div class="container text-center">
+                <h2 class="fw-bold mb-4">Our Locations</h2>
+                <div class="row justify-content-center gap-3">
+                    <div class="col-md-3">
+                        <a href="contact.html" class="btn btn-outline-secondary w-100 py-3" style="color: var(--text-color);">New York, NY</a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="contact.html" class="btn btn-outline-secondary w-100 py-3" style="color: var(--text-color);">Los Angeles, CA</a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="contact.html" class="btn btn-outline-secondary w-100 py-3" style="color: var(--text-color);">Chicago, IL</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: CTA / Newsletter -->
+        <section class="py-4" style="background-color: var(--tertiary-color); color: #fff;">
+            <div class="container text-center py-4">
+                <h2 class="fw-bold mb-3">Ready to Escape?</h2>
+                <p class="mb-4">Join our newsletter for 10% off your first booking.</p>
+                <form class="d-flex justify-content-center max-w-md mx-auto" style="max-width: 500px; margin: 0 auto;">
+                    <input type="email" class="form-control me-2 py-3" placeholder="Enter your email" required>
+                    <button class="btn btn-primary-custom" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row gy-4">
+                <!-- Column 1: Brand -->
+                <div class="col-lg-4 col-md-6">
+                    <a class="d-inline-flex align-items-center text-white text-decoration-none mb-3 fs-4 fw-bold" href="index.html">
+                        <i class="bi bi-door-closed-fill me-2" style="color: var(--primary-color);"></i> EscapeX
+                    </a>
+                    <p class="text-muted pe-4">The ultimate escape room experience with multiple locations across the country. Challenge your mind.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="fs-5"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="fs-5"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Column 2: Company Links -->
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white mb-4">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html">About Us</a></li>
+                        <li class="mb-2"><a href="services.html">Our Rooms</a></li>
+                        <li class="mb-2"><a href="pricing.html">Pricing</a></li>
+                        <li class="mb-2"><a href="contact.html">Locations</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Support Links -->
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white mb-4">Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="service-details.html">FAQ</a></li>
+                        <li class="mb-2"><a href="#">Waivers</a></li>
+                        <li class="mb-2"><a href="blog.html">Blog</a></li>
+                        <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Newsletter -->
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-white mb-4">Stay Updated</h5>
+                    <p class="text-muted">Get the latest news and special offers.</p>
+                    <form class="d-flex">
+                        <input type="email" class="form-control me-2" placeholder="Email address" style="background: rgba(255,255,255,0.1); border: none; color: #fff;">
+                        <button class="btn btn-primary-custom px-3" type="submit"><i class="bi bi-send-fill"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+            
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <p class="mb-0 text-muted">&copy; 2026 EscapeX. All rights reserved.</p>
+                <div class="text-muted small">
+                    <a href="#" class="me-3">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <div id="backToTop" class="back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
