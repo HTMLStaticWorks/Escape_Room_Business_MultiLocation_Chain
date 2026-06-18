@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - EscapeX</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
@@ -21,14 +21,15 @@
     </div>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-8 col-lg-6 col-xl-4">
                 <div class="custom-card p-4">
-                    <div class="text-center mb-4">
-                        <a class="navbar-brand fs-2 fw-bold text-decoration-none" href="index.html">
-                            <i class="bi bi-door-closed-fill me-2 text-primary"></i> EscapeX
+                    <div class="text-center mb-4 d-flex justify-content-center">
+                        <a class="brand-logo text-decoration-none d-flex align-items-center" href="index.html">
+                            <i class="bi bi-door-closed-fill me-2"></i> EscapeX
                         </a>
                     </div>
-                    <h3 class="text-center mb-4">Welcome Back</h3>
+                    <h3 class="text-center mb-2">Welcome Back</h3>
+                    <p class="text-center text-muted mb-4">Enter your credentials to access your account.</p>
                     <form>
                         <div class="mb-3">
                             <label class="form-label">Email address</label>
@@ -36,7 +37,12 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Password</label>
-                            <input type="password" class="form-control" placeholder="********">
+                            <div class="position-relative">
+                                <input type="password" class="form-control pe-5" id="loginPassword" placeholder="********">
+                                <button class="btn border-0 position-absolute end-0 top-50 translate-middle-y me-2" type="button" onclick="const p = document.getElementById('loginPassword'); const i = this.querySelector('i'); if(p.type === 'password'){p.type='text'; i.classList.replace('bi-eye', 'bi-eye-slash');}else{p.type='password'; i.classList.replace('bi-eye-slash', 'bi-eye');}" style="background: transparent; z-index: 5;">
+                                    <i class="bi bi-eye text-muted"></i>
+                                </button>
+                            </div>
                         </div>
                         <div class="d-flex justify-content-between mb-3">
                             <div class="form-check">
@@ -45,7 +51,7 @@
                             </div>
                             <a href="#" class="text-primary text-decoration-none small">Forgot password?</a>
                         </div>
-                        <button type="submit" class="btn btn-primary-custom w-100 mb-3" style="padding: 12px 16px; font-size: 0.95rem;">Login</button>
+                        <button type="submit" class="btn btn-primary-custom w-100 mb-3 justify-content-center" style="padding: 12px 16px; font-size: 0.95rem;">Login</button>
                     </form>
                     
                     <div class="text-center mb-3 text-muted">Or login with</div>

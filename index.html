@@ -8,7 +8,7 @@
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
@@ -18,11 +18,11 @@
 <body>
 
     <!-- Header -->
-    <header class="navbar navbar-expand-lg sticky-top">
+    <header class="navbar navbar-expand-xl sticky-top">
         <div class="container">
             <!-- Logo -->
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <i class="bi bi-door-closed-fill me-2 fs-3 text-primary"></i> EscapeX
+            <a class="brand-logo text-decoration-none d-flex align-items-center" href="index.html">
+                <i class="bi bi-door-closed-fill me-2"></i> EscapeX
             </a>
             
             <!-- Mobile Toggle -->
@@ -31,19 +31,21 @@
             </button>
 
             <!-- Desktop Menu -->
-            <div class="collapse navbar-collapse d-none d-lg-flex justify-content-between" id="desktopMenu">
+            <div class="collapse navbar-collapse d-none d-xl-flex justify-content-between" id="desktopMenu">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home 1</a></li>
                     <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="404.html">404 Page</a></li>
-                    <li class="nav-item"><a class="nav-link" href="coming-soon.html">Coming Soon</a></li>
                 </ul>
-                <div class="d-flex align-items-center gap-3">
+                 <div class="d-flex align-items-center gap-3">
                     <a href="login.html" class="btn-navbar-login">Login</a>
-                    <a href="register.html" class="btn-navbar-signup">Sign Up</a>
+                    <!-- RTL Toggle -->
+                    <button onclick="document.dir = document.dir === 'rtl' ? 'ltr' : 'rtl';" class="btn btn-link text-decoration-none fw-bold p-0 me-1" style="color: var(--text-color); font-size: 0.95rem;">RTL</button>
                     <!-- Theme Toggle -->
                     <button id="theme-toggle" class="btn btn-link p-0 text-decoration-none" style="color: var(--text-color);">
                         <i class="bi bi-sun fs-5"></i>
@@ -56,7 +58,9 @@
     <!-- Mobile Offcanvas Menu -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" style="background-color: var(--header-bg); color: var(--text-color);">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title fw-bold text-primary">EscapeX</h5>
+            <a class="brand-logo text-decoration-none d-flex align-items-center" href="index.html">
+                <i class="bi bi-door-closed-fill me-2"></i> EscapeX
+            </a>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -65,15 +69,17 @@
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="home-2.html">Home 2</a></li>
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="about.html">About Us</a></li>
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="services.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link fs-5 py-2" href="contact.html">Contact</a></li>
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="pricing.html">Pricing</a></li>
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="blog.html">Blog</a></li>
-                <li class="nav-item"><a class="nav-link fs-5 py-2" href="404.html">404 Page</a></li>
-                <li class="nav-item"><a class="nav-link fs-5 py-2" href="coming-soon.html">Coming Soon</a></li>
+                <li class="nav-item"><a class="nav-link fs-5 py-2" href="dashboard.html">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link fs-5 py-2" href="contact.html">Contact</a></li>
             </ul>
             <div class="d-grid gap-2">
-                <a href="login.html" class="btn-navbar-login">Login</a>
-                <a href="register.html" class="btn-navbar-signup">Sign Up</a>
+                <a href="login.html" class="btn-navbar-login mb-2">Login</a>
+                <div class="d-flex gap-2 w-100">
+                    <button onclick="document.dir = document.dir === 'rtl' ? 'ltr' : 'rtl';" class="btn btn-outline-secondary fw-bold w-50 py-2 flex-grow-1" style="color: var(--text-color);">RTL</button>
+                    <button class="btn btn-outline-secondary fw-bold w-50 py-2 flex-grow-1 theme-toggle-btn" style="color: var(--text-color);"><i class="bi bi-sun"></i> Theme</button>
+                </div>
             </div>
         </div>
     </div>
@@ -142,44 +148,44 @@
                     <div class="col-md-4">
                         <div class="card bg-transparent border-secondary h-100" style="border: 1px solid var(--tertiary-color);">
                             <!-- Room Image -->
-                            <img src="assets/images/room1.jpg" class="card-img-top" alt="The Heist" style="height: 200px; object-fit: cover; border-radius: 5px 5px 0 0;">
-                            <div class="card-body">
+                            <img src="assets/images/room1.jpg" class="card-img-top" alt="The Heist" style="aspect-ratio: 16/9; height: auto; object-fit: cover; border-radius: 5px 5px 0 0;">
+                            <div class="card-body d-flex flex-column">
                                 <h4>The Heist</h4>
                                 <div class="d-flex justify-content-between mb-3 text-muted small">
                                     <span><i class="bi bi-bar-chart-fill text-warning"></i> Hard</span>
                                     <span><i class="bi bi-person-fill"></i> 4-8</span>
                                 </div>
-                                <p>Break into the high-security vault and steal the diamond before the cops arrive.</p>
-                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-2 w-100" style="color: var(--primary-color); border-color: var(--primary-color);">View Details</a>
+                                <p class="mb-4">Break into the high-security vault and steal the diamond before the cops arrive.</p>
+                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-auto w-100" style="color: var(--primary-color); border-color: var(--primary-color);">View Details</a>
                             </div>
                         </div>
                     </div>
                     <!-- Repeat for 2 more rooms -->
                     <div class="col-md-4">
                         <div class="card bg-transparent border-secondary h-100" style="border: 1px solid var(--tertiary-color);">
-                            <img src="assets/images/room2.jpg" class="card-img-top" alt="Zombie Outbreak" style="height: 200px; object-fit: cover; border-radius: 5px 5px 0 0;">
-                            <div class="card-body">
+                            <img src="assets/images/zombie.jpg" class="card-img-top" alt="Zombie Outbreak" style="aspect-ratio: 16/9; height: auto; object-fit: cover; border-radius: 5px 5px 0 0;">
+                            <div class="card-body d-flex flex-column">
                                 <h4>Zombie Outbreak</h4>
                                 <div class="d-flex justify-content-between mb-3 text-muted small">
                                     <span><i class="bi bi-bar-chart-fill text-danger"></i> Extreme</span>
                                     <span><i class="bi bi-person-fill"></i> 2-6</span>
                                 </div>
-                                <p>Find the cure in the abandoned lab before the horde breaks in.</p>
-                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-2 w-100" style="color: var(--primary-color); border-color: var(--primary-color);">View Details</a>
+                                <p class="mb-4">Find the cure in the abandoned lab before the horde breaks in.</p>
+                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-auto w-100" style="color: var(--primary-color); border-color: var(--primary-color);">View Details</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card bg-transparent border-secondary h-100" style="border: 1px solid var(--tertiary-color);">
-                            <img src="assets/images/room3.jpg" class="card-img-top" alt="Asylum" style="height: 200px; object-fit: cover; border-radius: 5px 5px 0 0;">
-                            <div class="card-body">
+                            <img src="assets/images/asylum.jpg" class="card-img-top" alt="Asylum" style="aspect-ratio: 16/9; height: auto; object-fit: cover; border-radius: 5px 5px 0 0;">
+                            <div class="card-body d-flex flex-column">
                                 <h4>Asylum</h4>
                                 <div class="d-flex justify-content-between mb-3 text-muted small">
                                     <span><i class="bi bi-bar-chart-fill text-success"></i> Medium</span>
                                     <span><i class="bi bi-person-fill"></i> 2-8</span>
                                 </div>
-                                <p>Escape the haunted asylum. Do you have what it takes?</p>
-                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-2 w-100" style="color: var(--primary-color); border-color: var(--primary-color);">View Details</a>
+                                <p class="mb-4">Escape the haunted asylum. Do you have what it takes?</p>
+                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-auto w-100" style="color: var(--primary-color); border-color: var(--primary-color);">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -193,40 +199,78 @@
         <!-- Section 4: Video / Promo -->
         <section class="py-4 my-3 text-center">
             <div class="container">
-                <div class="p-4 rounded-4" style="background: linear-gradient(45deg, var(--tertiary-color), var(--secondary-color));">
-                    <h2 class="fw-bold text-white mb-4">Watch The Experience</h2>
+                <div class="rounded-4 d-flex flex-column align-items-center justify-content-center" style="background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('assets/images/video_preview.jpg') center/cover no-repeat; min-height: 400px; padding: 60px 20px; border: 1px solid var(--card-border);">
+                    <h2 class="fw-bold text-white mb-4 display-5">Watch The Experience</h2>
                     <div class="position-relative d-inline-block cursor-pointer">
-                        <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px);">
-                            <i class="bi bi-play-fill text-white" style="font-size: 3rem; margin-left: 5px;"></i>
+                        <div style="width: 90px; height: 90px; background: rgba(0,255,136,0.25); border: 2px solid var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px); transition: all 0.3s ease; box-shadow: 0 0 30px var(--primary-glow);" onmouseover="this.style.transform='scale(1.1)'; this.style.backgroundColor='rgba(0,255,136,0.4)';" onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='rgba(0,255,136,0.25)';">
+                            <i class="bi bi-play-fill" style="font-size: 3.5rem; color: #fff; margin-left: 6px;"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 5: Locations Quick Links -->
-        <section class="py-4">
-            <div class="container text-center">
-                <h2 class="fw-bold mb-4">Our Locations</h2>
-                <div class="row justify-content-center gap-3">
-                    <div class="col-md-3">
-                        <a href="contact.html" class="btn btn-outline-secondary w-100 py-3" style="color: var(--text-color);">New York, NY</a>
+
+
+        <!-- Section 6: Immersive Environments -->
+        <section class="py-5" style="background-color: var(--card-bg);">
+            <div class="container text-center py-4">
+                <h2 class="fw-bold mb-3">Stunning, Immersive Environments</h2>
+                <p class="text-muted mb-5">Our sets are designed by industry professionals to make you forget the outside world. Every prop, sound, and lighting effect is engineered to pull you into the story.</p>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <img src="assets/images/wizard.jpg" alt="Magic and Mystery" class="img-fluid rounded-4 shadow-sm w-100" style="aspect-ratio: 4/3; object-fit: cover; border: 1px solid var(--tertiary-color);">
                     </div>
-                    <div class="col-md-3">
-                        <a href="contact.html" class="btn btn-outline-secondary w-100 py-3" style="color: var(--text-color);">Los Angeles, CA</a>
+                    <div class="col-md-4">
+                        <img src="assets/images/pharaoh.jpg" alt="Ancient Tombs" class="img-fluid rounded-4 shadow-sm w-100" style="aspect-ratio: 4/3; object-fit: cover; border: 1px solid var(--tertiary-color);">
                     </div>
-                    <div class="col-md-3">
-                        <a href="contact.html" class="btn btn-outline-secondary w-100 py-3" style="color: var(--text-color);">Chicago, IL</a>
+                    <div class="col-md-4">
+                        <img src="assets/images/submarine.jpg" alt="Deep Sea Adventure" class="img-fluid rounded-4 shadow-sm w-100" style="aspect-ratio: 4/3; object-fit: cover; border: 1px solid var(--tertiary-color);">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 6: CTA / Newsletter -->
+        <!-- Section 7: Testimonials -->
+        <section class="py-4 bg-dark text-white text-center">
+            <div class="container py-4">
+                <h2 class="fw-bold mb-4">What Our Escapees Say</h2>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-5">
+                        <div class="p-4 custom-card h-100 text-start position-relative" style="background-color: var(--card-bg); border: 1px solid var(--tertiary-color);">
+                            <i class="bi bi-quote position-absolute text-primary" style="font-size: 4rem; top: -10px; right: 20px; opacity: 0.1;"></i>
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <img src="assets/images/team1.jpg" alt="Player" style="width: 60px; height: 60px; object-fit: cover; border-radius: 50%; border: 2px solid var(--primary-color);">
+                                <div>
+                                    <h5 class="fw-bold text-primary mb-0">Sarah Jenkins</h5>
+                                    <small class="text-muted">Escaped 'The Heist'</small>
+                                </div>
+                            </div>
+                            <p class="fs-5 fst-italic mb-0" style="color: var(--text-color);">"The most immersive escape room I've ever done. The puzzles were challenging but fair! Our team had an absolute blast working together."</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-5">
+                        <div class="p-4 custom-card h-100 text-start position-relative" style="background-color: var(--card-bg); border: 1px solid var(--tertiary-color);">
+                            <i class="bi bi-quote position-absolute text-primary" style="font-size: 4rem; top: -10px; right: 20px; opacity: 0.1;"></i>
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <img src="assets/images/admin.jpg" alt="Player" style="width: 60px; height: 60px; object-fit: cover; border-radius: 50%; border: 2px solid var(--primary-color);">
+                                <div>
+                                    <h5 class="fw-bold text-primary mb-0">Marcus Lee</h5>
+                                    <small class="text-muted">Escaped 'Zombie Outbreak'</small>
+                                </div>
+                            </div>
+                            <p class="fs-5 fst-italic mb-0" style="color: var(--text-color);">"Incredible attention to detail. The set design blew us away. It really felt like we were in a movie. Highly recommend for any group!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: CTA / Newsletter -->
         <section class="py-4" style="background-color: var(--tertiary-color); color: #fff;">
             <div class="container text-center py-4">
-                <h2 class="fw-bold mb-3">Ready to Escape?</h2>
-                <p class="mb-4">Join our newsletter for 10% off your first booking.</p>
+                <h2 class="fw-bold mb-3" style="color: #fff !important;">Ready to Escape?</h2>
+                <p class="mb-4" style="color: rgba(255,255,255,0.8) !important;">Join our newsletter for 10% off your first booking.</p>
                 <form class="d-flex justify-content-center max-w-md mx-auto" style="max-width: 500px; margin: 0 auto;">
                     <input type="email" class="form-control me-2 py-3" placeholder="Enter your email" required>
                     <button class="btn btn-primary-custom" type="submit">Subscribe</button>
@@ -241,13 +285,13 @@
             <div class="row gy-4">
                 <!-- Column 1: Brand -->
                 <div class="col-lg-4 col-md-6">
-                    <a class="d-inline-flex align-items-center text-white text-decoration-none mb-3 fs-4 fw-bold" href="index.html">
-                        <i class="bi bi-door-closed-fill me-2" style="color: var(--primary-color);"></i> EscapeX
+                    <a class="brand-logo text-decoration-none d-inline-flex align-items-center mb-3" href="index.html">
+                        <i class="bi bi-door-closed-fill me-2"></i> EscapeX
                     </a>
                     <p class="text-muted pe-4">The ultimate escape room experience with multiple locations across the country. Challenge your mind.</p>
                     <div class="d-flex gap-3 mt-4">
                         <a href="#" class="fs-5"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="fs-5"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="fs-5"><i class="bi bi-twitter-x"></i></a>
                         <a href="#" class="fs-5"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
@@ -307,4 +351,5 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 

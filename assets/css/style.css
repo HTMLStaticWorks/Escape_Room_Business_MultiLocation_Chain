@@ -98,9 +98,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.02em;
+  color: var(--text-color);
 }
 
-p { color: var(--text-color); }
+p, .card { color: var(--text-color); }
 
 a { transition: color 0.25s ease; }
 
@@ -108,6 +109,8 @@ img { max-width: 100%; }
 
 /* RTL Support */
 [dir="rtl"] { text-align: right; }
+[dir="rtl"] .end-0 { right: auto !important; left: 0 !important; }
+[dir="rtl"] .start-0 { left: auto !important; right: 0 !important; }
 
 /* ============================================================
    SCROLLBAR (Dark Mode Premium)
@@ -221,6 +224,7 @@ img { max-width: 100%; }
 .btn-primary-custom {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   background: linear-gradient(135deg, var(--primary-color), #00d4ff);
   color: #000 !important;
@@ -756,24 +760,63 @@ footer .form-control::placeholder { color: var(--footer-text) !important; }
 
 /* Social icons in footer */
 footer a.fs-5 {
-  width: 38px;
-  height: 38px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  border: 1px solid var(--footer-border);
-  color: var(--footer-text) !important;
-  transition: all 0.25s ease;
-  font-size: 1rem !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  background-color: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+  color: var(--text-color) !important;
+  transition: all 0.25s ease !important;
+  font-size: 1.25rem !important;
+  text-decoration: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+footer a.fs-5 i, footer a.fs-5 i::before {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  transform: none !important;
 }
 
 footer a.fs-5:hover {
-  background: var(--primary-color);
+  background-color: var(--primary-color) !important;
   color: #000 !important;
-  border-color: var(--primary-color);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px var(--primary-glow);
+  border-color: var(--primary-color) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 16px var(--primary-glow) !important;
+}
+
+footer a.fs-5:hover i, footer a.fs-5:hover i::before {
+  color: #000 !important;
+  fill: #000 !important;
+}
+
+/* ============================================================
+   SOCIAL LINKS
+   ============================================================ */
+.social-link,
+a:not(footer a):has(> .bi-twitter-x),
+a:not(footer a):has(> .bi-facebook),
+a:not(footer a):has(> .bi-instagram) {
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.social-link:hover,
+a:not(footer a):has(> .bi-twitter-x):hover,
+a:not(footer a):has(> .bi-facebook):hover,
+a:not(footer a):has(> .bi-instagram):hover {
+  transform: translateY(-4px) scale(1.1);
+  color: var(--primary-color) !important;
+  filter: drop-shadow(0 4px 10px var(--primary-glow));
 }
 
 /* ============================================================
@@ -796,6 +839,22 @@ footer a.fs-5:hover {
   box-shadow: 0 4px 16px var(--primary-glow);
   transition: all 0.3s ease;
   font-size: 1.1rem;
+}
+
+/* ============================================================
+   BRAND LOGO - UNIFIED
+   ============================================================ */
+.brand-logo {
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--primary-color) !important;
+  letter-spacing: -0.03em;
+}
+.brand-logo i {
+  font-size: 1.75rem;
+  color: var(--primary-color) !important;
+  display: inline-flex;
+  align-items: center;
 }
 
 .back-to-top:hover {
@@ -988,14 +1047,14 @@ footer a.fs-5:hover {
 /* ============================================================
    RESPONSIVE TWEAKS
    ============================================================ */
-@media (max-width: 991.98px) {
-  .hero-section { min-height: 80vh; padding: 80px 0 60px; }
+@media (max-width: 1199.98px) {
+  .hero-section { min-height: 80vh; padding: 100px 0 80px; align-items: flex-end; }
   .page-hero { padding: 72px 0; min-height: 280px; }
   .hero-section h1 { font-size: clamp(2rem, 8vw, 3rem); }
 }
 
 @media (max-width: 767.98px) {
-  .hero-section { min-height: 70vh; }
+  .hero-section { min-height: 80vh; align-items: flex-end; padding-top: 100px; padding-bottom: 80px; }
   .section-title { font-size: 1.75rem; }
   .pricing-card.featured { transform: scale(1.0); }
 }
@@ -1027,10 +1086,15 @@ footer a.fs-5:hover {
    OUTLINE BUTTONS (Bootstrap override)
    ============================================================ */
 .btn-outline-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 26px;
+  font-size: 0.9rem;
   color: var(--primary-color) !important;
   border-color: var(--primary-color) !important;
   border-radius: 8px;
-  font-weight: 600;
+  font-weight: 700;
   transition: all 0.3s ease;
 }
 
@@ -1111,15 +1175,7 @@ footer ul.list-unstyled a:hover {
   color: var(--primary-color) !important;
   transform: translateX(5px);
 }
-footer .d-flex.gap-3 a {
-  display: inline-block;
-  transition: all 0.3s ease;
-}
-footer .d-flex.gap-3 a:hover {
-  color: var(--primary-color) !important;
-  transform: translateY(-4px) scale(1.1);
-  text-shadow: 0 5px 15px var(--primary-glow);
-}
+
 
 /* Table Row Hover Enhancement */
 .table-hover tbody tr {

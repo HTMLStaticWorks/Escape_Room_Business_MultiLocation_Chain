@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EscapeX - Our Escape Rooms</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
 <body>
     <!-- Header -->
-    <header class="navbar navbar-expand-lg sticky-top">
+    <header class="navbar navbar-expand-xl sticky-top">
         <div class="container">
             <!-- Logo -->
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <i class="bi bi-door-closed-fill me-2 fs-3 text-primary"></i> EscapeX
+            <a class="brand-logo text-decoration-none d-flex align-items-center" href="index.html">
+                <i class="bi bi-door-closed-fill me-2"></i> EscapeX
             </a>
             
             <!-- Mobile Toggle -->
@@ -24,19 +24,21 @@
             </button>
 
             <!-- Desktop Menu -->
-            <div class="collapse navbar-collapse d-none d-lg-flex justify-content-between" id="desktopMenu">
+            <div class="collapse navbar-collapse d-none d-xl-flex justify-content-between" id="desktopMenu">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home 1</a></li>
                     <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="404.html">404 Page</a></li>
-                    <li class="nav-item"><a class="nav-link" href="coming-soon.html">Coming Soon</a></li>
                 </ul>
-                <div class="d-flex align-items-center gap-3">
+                 <div class="d-flex align-items-center gap-3">
                     <a href="login.html" class="btn-navbar-login">Login</a>
-                    <a href="register.html" class="btn-navbar-signup">Sign Up</a>
+                    <!-- RTL Toggle -->
+                    <button onclick="document.dir = document.dir === 'rtl' ? 'ltr' : 'rtl';" class="btn btn-link text-decoration-none fw-bold p-0 me-1" style="color: var(--text-color); font-size: 0.95rem;">RTL</button>
                     <!-- Theme Toggle -->
                     <button id="theme-toggle" class="btn btn-link p-0 text-decoration-none" style="color: var(--text-color);">
                         <i class="bi bi-sun fs-5"></i>
@@ -49,7 +51,9 @@
     <!-- Mobile Offcanvas Menu -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" style="background-color: var(--header-bg); color: var(--text-color);">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title fw-bold text-primary">EscapeX</h5>
+            <a class="brand-logo text-decoration-none d-flex align-items-center" href="index.html">
+                <i class="bi bi-door-closed-fill me-2"></i> EscapeX
+            </a>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -58,15 +62,17 @@
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="home-2.html">Home 2</a></li>
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="about.html">About Us</a></li>
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="services.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link fs-5 py-2" href="contact.html">Contact</a></li>
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="pricing.html">Pricing</a></li>
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="blog.html">Blog</a></li>
-                <li class="nav-item"><a class="nav-link fs-5 py-2" href="404.html">404 Page</a></li>
-                <li class="nav-item"><a class="nav-link fs-5 py-2" href="coming-soon.html">Coming Soon</a></li>
+                <li class="nav-item"><a class="nav-link fs-5 py-2" href="dashboard.html">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link fs-5 py-2" href="contact.html">Contact</a></li>
             </ul>
             <div class="d-grid gap-2">
-                <a href="login.html" class="btn-navbar-login">Login</a>
-                <a href="register.html" class="btn-navbar-signup">Sign Up</a>
+                <a href="login.html" class="btn-navbar-login mb-2">Login</a>
+                <div class="d-flex gap-2 w-100">
+                    <button onclick="document.dir = document.dir === 'rtl' ? 'ltr' : 'rtl';" class="btn btn-outline-secondary fw-bold w-50 py-2 flex-grow-1" style="color: var(--text-color);">RTL</button>
+                    <button class="btn btn-outline-secondary fw-bold w-50 py-2 flex-grow-1 theme-toggle-btn" style="color: var(--text-color);"><i class="bi bi-sun"></i> Theme</button>
+                </div>
             </div>
         </div>
     </div>
@@ -84,81 +90,129 @@
                 <div class="row g-4">
                     <!-- Card 1 -->
                     <div class="col-md-6 col-lg-3">
-                        <div class="custom-card h-100">
-                            <div class="card-body text-center">
-                                <img src="assets/images/room1.jpg" class="card-img-top" alt="The Heist" style="height: 200px; object-fit: cover; border-radius: 5px 5px 0 0;">
-                                <h4>The Heist</h4>
-                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-3 w-100">Details</a>
+                        <div class="custom-card h-100 d-flex flex-column">
+                            <img src="assets/images/room1.jpg" class="card-img-top" alt="The Heist" style="aspect-ratio: 16/9; height: auto; object-fit: cover; border-radius: 5px 5px 0 0;">
+                            <div class="card-body d-flex flex-column flex-grow-1 text-start">
+                                <h4 class="fw-bold mb-2">The Heist</h4>
+                                <div class="d-flex justify-content-between text-muted small mb-3">
+                                    <span><i class="bi bi-people-fill me-1"></i>2-6 Players</span>
+                                    <span><i class="bi bi-clock-fill me-1"></i>60 Min</span>
+                                    <span><i class="bi bi-bar-chart-fill me-1 text-warning"></i>Hard</span>
+                                </div>
+                                <p class="text-muted flex-grow-1 small">Infiltrate a high-security bank vault and steal the diamond before time runs out.</p>
+                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-auto w-100">Book Now / Details</a>
                             </div>
                         </div>
                     </div>
                     <!-- Card 2 -->
                     <div class="col-md-6 col-lg-3">
-                        <div class="custom-card h-100">
-                            <div class="card-body text-center">
-                                <img src="assets/images/zombie.jpg" class="card-img-top" alt="Zombie Outbreak" style="height: 200px; object-fit: cover; border-radius: 5px 5px 0 0;">
-                                <h4>Zombie Outbreak</h4>
-                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-3 w-100">Details</a>
+                        <div class="custom-card h-100 d-flex flex-column">
+                            <img src="assets/images/zombie.jpg" class="card-img-top" alt="Zombie Outbreak" style="aspect-ratio: 16/9; height: auto; object-fit: cover; border-radius: 5px 5px 0 0;">
+                            <div class="card-body d-flex flex-column flex-grow-1 text-start">
+                                <h4 class="fw-bold mb-2">Zombie Outbreak</h4>
+                                <div class="d-flex justify-content-between text-muted small mb-3">
+                                    <span><i class="bi bi-people-fill me-1"></i>4-8 Players</span>
+                                    <span><i class="bi bi-clock-fill me-1"></i>60 Min</span>
+                                    <span><i class="bi bi-bar-chart-fill me-1 text-danger"></i>Extreme</span>
+                                </div>
+                                <p class="text-muted flex-grow-1 small">Find the cure in an abandoned lab before the horde breaks down the doors.</p>
+                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-auto w-100">Book Now / Details</a>
                             </div>
                         </div>
                     </div>
                     <!-- Card 3 -->
                     <div class="col-md-6 col-lg-3">
-                        <div class="custom-card h-100">
-                            <div class="card-body text-center">
-                                <img src="assets/images/asylum.jpg" class="card-img-top" alt="Asylum" style="height: 200px; object-fit: cover; border-radius: 5px 5px 0 0;">
-                                <h4>Asylum</h4>
-                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-3 w-100">Details</a>
+                        <div class="custom-card h-100 d-flex flex-column">
+                            <img src="assets/images/asylum.jpg" class="card-img-top" alt="Asylum" style="aspect-ratio: 16/9; height: auto; object-fit: cover; border-radius: 5px 5px 0 0;">
+                            <div class="card-body d-flex flex-column flex-grow-1 text-start">
+                                <h4 class="fw-bold mb-2">Asylum</h4>
+                                <div class="d-flex justify-content-between text-muted small mb-3">
+                                    <span><i class="bi bi-people-fill me-1"></i>2-5 Players</span>
+                                    <span><i class="bi bi-clock-fill me-1"></i>60 Min</span>
+                                    <span><i class="bi bi-bar-chart-fill me-1 text-warning"></i>Hard</span>
+                                </div>
+                                <p class="text-muted flex-grow-1 small">Escape the creepy halls of a haunted asylum before the night is over.</p>
+                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-auto w-100">Book Now / Details</a>
                             </div>
                         </div>
                     </div>
                     <!-- Card 4 -->
                     <div class="col-md-6 col-lg-3">
-                        <div class="custom-card h-100">
-                            <div class="card-body text-center">
-                                <img src="assets/images/mars.jpg" class="card-img-top" alt="Mars Rescue" style="height: 200px; object-fit: cover; border-radius: 5px 5px 0 0;">
-                                <h4>Mars Rescue</h4>
-                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-3 w-100">Details</a>
+                        <div class="custom-card h-100 d-flex flex-column">
+                            <img src="assets/images/mars.jpg" class="card-img-top" alt="Mars Rescue" style="aspect-ratio: 16/9; height: auto; object-fit: cover; border-radius: 5px 5px 0 0;">
+                            <div class="card-body d-flex flex-column flex-grow-1 text-start">
+                                <h4 class="fw-bold mb-2">Mars Rescue</h4>
+                                <div class="d-flex justify-content-between text-muted small mb-3">
+                                    <span><i class="bi bi-people-fill me-1"></i>3-6 Players</span>
+                                    <span><i class="bi bi-clock-fill me-1"></i>60 Min</span>
+                                    <span><i class="bi bi-bar-chart-fill me-1 text-success"></i>Medium</span>
+                                </div>
+                                <p class="text-muted flex-grow-1 small">Restore power to your stranded rover on Mars before oxygen levels deplete.</p>
+                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-auto w-100">Book Now / Details</a>
                             </div>
                         </div>
                     </div>
                     <!-- Card 5 -->
                     <div class="col-md-6 col-lg-3">
-                        <div class="custom-card h-100">
-                            <div class="card-body text-center">
-                                <img src="assets/images/pharaoh.jpg" class="card-img-top" alt="Pharaoh's Tomb" style="height: 200px; object-fit: cover; border-radius: 5px 5px 0 0;">
-                                <h4>Pharaoh's Tomb</h4>
-                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-3 w-100">Details</a>
+                        <div class="custom-card h-100 d-flex flex-column">
+                            <img src="assets/images/pharaoh.jpg" class="card-img-top" alt="Pharaoh's Tomb" style="aspect-ratio: 16/9; height: auto; object-fit: cover; border-radius: 5px 5px 0 0;">
+                            <div class="card-body d-flex flex-column flex-grow-1 text-start">
+                                <h4 class="fw-bold mb-2">Pharaoh's Tomb</h4>
+                                <div class="d-flex justify-content-between text-muted small mb-3">
+                                    <span><i class="bi bi-people-fill me-1"></i>2-6 Players</span>
+                                    <span><i class="bi bi-clock-fill me-1"></i>60 Min</span>
+                                    <span><i class="bi bi-bar-chart-fill me-1 text-success"></i>Medium</span>
+                                </div>
+                                <p class="text-muted flex-grow-1 small">Solve the ancient riddles to escape the cursed tomb of the Pharaoh.</p>
+                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-auto w-100">Book Now / Details</a>
                             </div>
                         </div>
                     </div>
                     <!-- Card 6 -->
                     <div class="col-md-6 col-lg-3">
-                        <div class="custom-card h-100">
-                            <div class="card-body text-center">
-                                <img src="assets/images/escape-room-general.jpg" class="card-img-top" alt="Secret Agent" style="height: 200px; object-fit: cover; border-radius: 5px 5px 0 0;">
-                                <h4>Secret Agent</h4>
-                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-3 w-100">Details</a>
+                        <div class="custom-card h-100 d-flex flex-column">
+                            <img src="assets/images/room2.jpg" class="card-img-top" alt="Secret Agent" style="aspect-ratio: 16/9; height: auto; object-fit: cover; border-radius: 5px 5px 0 0;">
+                            <div class="card-body d-flex flex-column flex-grow-1 text-start">
+                                <h4 class="fw-bold mb-2">Secret Agent</h4>
+                                <div class="d-flex justify-content-between text-muted small mb-3">
+                                    <span><i class="bi bi-people-fill me-1"></i>4-8 Players</span>
+                                    <span><i class="bi bi-clock-fill me-1"></i>60 Min</span>
+                                    <span><i class="bi bi-bar-chart-fill me-1 text-warning"></i>Hard</span>
+                                </div>
+                                <p class="text-muted flex-grow-1 small">Uncover the double agent and stop the launch sequence in this spy thriller.</p>
+                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-auto w-100">Book Now / Details</a>
                             </div>
                         </div>
                     </div>
                     <!-- Card 7 -->
                     <div class="col-md-6 col-lg-3">
-                        <div class="custom-card h-100">
-                            <div class="card-body text-center">
-                                <img src="assets/images/submarine.jpg" class="card-img-top" alt="Submarine Down" style="height: 200px; object-fit: cover; border-radius: 5px 5px 0 0;">
-                                <h4>Submarine Down</h4>
-                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-3 w-100">Details</a>
+                        <div class="custom-card h-100 d-flex flex-column">
+                            <img src="assets/images/submarine.jpg" class="card-img-top" alt="Submarine Down" style="aspect-ratio: 16/9; height: auto; object-fit: cover; border-radius: 5px 5px 0 0;">
+                            <div class="card-body d-flex flex-column flex-grow-1 text-start">
+                                <h4 class="fw-bold mb-2">Submarine Down</h4>
+                                <div class="d-flex justify-content-between text-muted small mb-3">
+                                    <span><i class="bi bi-people-fill me-1"></i>3-6 Players</span>
+                                    <span><i class="bi bi-clock-fill me-1"></i>60 Min</span>
+                                    <span><i class="bi bi-bar-chart-fill me-1 text-danger"></i>Extreme</span>
+                                </div>
+                                <p class="text-muted flex-grow-1 small">Fix the engines of a sinking submarine before the pressure becomes too much.</p>
+                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-auto w-100">Book Now / Details</a>
                             </div>
                         </div>
                     </div>
                     <!-- Card 8 -->
                     <div class="col-md-6 col-lg-3">
-                        <div class="custom-card h-100">
-                            <div class="card-body text-center">
-                                <img src="assets/images/wizard.jpg" class="card-img-top" alt="Wizard's Tower" style="height: 200px; object-fit: cover; border-radius: 5px 5px 0 0;">
-                                <h4>Wizard's Tower</h4>
-                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-3 w-100">Details</a>
+                        <div class="custom-card h-100 d-flex flex-column">
+                            <img src="assets/images/wizard.jpg" class="card-img-top" alt="Wizard's Tower" style="aspect-ratio: 16/9; height: auto; object-fit: cover; border-radius: 5px 5px 0 0;">
+                            <div class="card-body d-flex flex-column flex-grow-1 text-start">
+                                <h4 class="fw-bold mb-2">Wizard's Tower</h4>
+                                <div class="d-flex justify-content-between text-muted small mb-3">
+                                    <span><i class="bi bi-people-fill me-1"></i>2-5 Players</span>
+                                    <span><i class="bi bi-clock-fill me-1"></i>60 Min</span>
+                                    <span><i class="bi bi-bar-chart-fill me-1 text-success"></i>Medium</span>
+                                </div>
+                                <p class="text-muted flex-grow-1 small">Master the elements and break the spell to escape the dark wizard's tower.</p>
+                                <a href="service-details.html" class="btn btn-outline-primary btn-sm mt-auto w-100">Book Now / Details</a>
                             </div>
                         </div>
                     </div>
@@ -166,10 +220,264 @@
             </div>
         </section>
     
+        <!-- Section: What to Expect -->
+        <section class="py-5" style="background-color: var(--card-bg);">
+            <div class="container text-center py-4">
+                <h2 class="fw-bold mb-5">What to Expect</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <img src="assets/images/blog1.jpg" alt="60 Minutes" class="mb-3 rounded-circle shadow-sm" style="width: 100px; height: 100px; object-fit: cover; border: 2px solid var(--primary-color);">
+                        <h4>60 Minutes to Escape</h4>
+                        <p class="text-muted">The clock is ticking. You have exactly one hour to decipher the clues and break out.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="assets/images/team1.jpg" alt="Teamwork" class="mb-3 rounded-circle shadow-sm" style="width: 100px; height: 100px; object-fit: cover; border: 2px solid var(--primary-color);">
+                        <h4>Teamwork Required</h4>
+                        <p class="text-muted">Communication is key. You cannot escape alone. Bring friends, family, or coworkers.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="assets/images/test_puzzle.jpg" alt="Immersive" class="mb-3 rounded-circle shadow-sm" style="width: 100px; height: 100px; object-fit: cover; border: 2px solid var(--primary-color);">
+                        <h4>Fully Immersive</h4>
+                        <p class="text-muted">From the moment you step inside, you are part of the story. Hollywood-level set design awaits.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Difficulty Levels Explained -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <img src="assets/images/admin.jpg" class="img-fluid rounded-4 shadow" alt="Game Master" style="aspect-ratio: 4/3; object-fit: cover; border: 1px solid var(--tertiary-color);">
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="fw-bold mb-4">Difficulty Levels Explained</h2>
+                        <p class="lead text-muted mb-4">Whether it's your first time or your fiftieth, we have a room for you.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <h5 class="fw-bold text-success"><i class="bi bi-bar-chart-fill me-2"></i>Medium</h5>
+                                <p class="text-muted">Perfect for beginners and families. Focuses on straightforward logic and exploration.</p>
+                            </li>
+                            <li class="mb-3">
+                                <h5 class="fw-bold text-warning"><i class="bi bi-bar-chart-fill me-2"></i>Hard</h5>
+                                <p class="text-muted">For seasoned players. Expect multi-layered puzzles and hidden compartments.</p>
+                            </li>
+                            <li class="mb-3">
+                                <h5 class="fw-bold text-danger"><i class="bi bi-bar-chart-fill me-2"></i>Extreme</h5>
+                                <p class="text-muted">Our most challenging rooms. High failure rate. Communication and speed are vital.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Section 1: Special Event Packages -->
+        <section class="py-5" id="special-packages" style="background-color: var(--card-bg);">
+            <div class="container py-4">
+                <div class="text-center mb-5">
+                    <span class="section-label">Group Experiences</span>
+                    <h2 class="section-title fw-bold">Special Event Packages</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">Make your next gathering unforgettable. We host corporate teams, private parties, and VIP events.</p>
+                </div>
+                <div class="row g-4">
+                    <!-- Package 1 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="custom-card h-100 p-4">
+                            <div class="card-body d-flex flex-column justify-content-between h-100">
+                                <div>
+                                    <div class="card-icon text-primary mb-3">
+                                        <i class="bi bi-briefcase-fill"></i>
+                                    </div>
+                                    <h4 class="fw-bold mb-3">Corporate Team Building</h4>
+                                    <p class="text-muted">Enhance communication, collaboration, and problem-solving. Includes custom scheduling, a dedicated event coordinator, and post-game analysis.</p>
+                                </div>
+                                <div class="mt-4">
+                                    <a href="contact.html" class="btn btn-outline-primary w-100">Book Event</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Package 2 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="custom-card h-100 p-4">
+                            <div class="card-body d-flex flex-column justify-content-between h-100">
+                                <div>
+                                    <div class="card-icon text-primary mb-3">
+                                        <i class="bi bi-gift-fill"></i>
+                                    </div>
+                                    <h4 class="fw-bold mb-3">Birthdays & Celebrations</h4>
+                                    <p class="text-muted">Celebrate your special day with high-octane thrills! Includes free entry for the guest of honor, private party lounge access, and digital photoshoots.</p>
+                                </div>
+                                <div class="mt-4">
+                                    <a href="contact.html" class="btn btn-outline-primary w-100">Plan Party</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Package 3 -->
+                    <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
+                        <div class="custom-card h-100 p-4">
+                            <div class="card-body d-flex flex-column justify-content-between h-100">
+                                <div>
+                                    <div class="card-icon text-primary mb-3">
+                                        <i class="bi bi-gem"></i>
+                                    </div>
+                                    <h4 class="fw-bold mb-3">VIP Full-Buyout</h4>
+                                    <p class="text-muted">Get exclusive access to the entire venue. Ideal for large groups (up to 60 players), custom game setups, and fully catered food & beverage packages.</p>
+                                </div>
+                                <div class="mt-4">
+                                    <a href="contact.html" class="btn btn-outline-primary w-100">Inquire VIP</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Live Leaderboard -->
+        <section class="py-5" id="leaderboard">
+            <div class="container py-4">
+                <div class="text-center mb-5">
+                    <span class="section-label">Hall of Fame</span>
+                    <h2 class="section-title fw-bold">Live Escape Records</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">Think your team has what it takes? Beat these times to make the monthly leaderboard.</p>
+                </div>
+                <div class="custom-card p-4 overflow-hidden">
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="py-3 px-4">Rank</th>
+                                    <th scope="col" class="py-3">Team Name</th>
+                                    <th scope="col" class="py-3">Escape Room</th>
+                                    <th scope="col" class="py-3">Escape Time</th>
+                                    <th scope="col" class="py-3 text-center">Clues Used</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="py-3 px-4 fw-bold text-primary"><i class="bi bi-trophy-fill me-2 text-warning"></i>1st</td>
+                                    <td class="py-3 fw-bold">The CodeBreakers</td>
+                                    <td class="py-3">The Heist</td>
+                                    <td class="py-3 text-success fw-bold">38:14</td>
+                                    <td class="py-3 text-center"><span class="badge bg-secondary">0 Clues</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4 fw-bold text-primary"><i class="bi bi-trophy-fill me-2 text-secondary"></i>2nd</td>
+                                    <td class="py-3 fw-bold">BioHazard Crew</td>
+                                    <td class="py-3">Zombie Outbreak</td>
+                                    <td class="py-3 text-success fw-bold">41:05</td>
+                                    <td class="py-3 text-center"><span class="badge bg-secondary">1 Clue</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4 fw-bold text-primary"><i class="bi bi-trophy-fill me-2 text-danger"></i>3rd</td>
+                                    <td class="py-3 fw-bold">Space Cadets</td>
+                                    <td class="py-3">Mars Rescue</td>
+                                    <td class="py-3 text-success fw-bold">44:22</td>
+                                    <td class="py-3 text-center"><span class="badge bg-secondary">1 Clue</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4 fw-bold text-muted">4th</td>
+                                    <td class="py-3 fw-bold">Sub Hunters</td>
+                                    <td class="py-3">Submarine Down</td>
+                                    <td class="py-3 text-success fw-bold">47:19</td>
+                                    <td class="py-3 text-center"><span class="badge bg-secondary">2 Clues</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4 fw-bold text-muted">5th</td>
+                                    <td class="py-3 fw-bold">Pharaohs Elite</td>
+                                    <td class="py-3">Pharaoh's Tomb</td>
+                                    <td class="py-3 text-success fw-bold">49:02</td>
+                                    <td class="py-3 text-center"><span class="badge bg-secondary">2 Clues</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: FAQ -->
+        <section class="py-5" id="faq" style="background-color: var(--card-bg);">
+            <div class="container py-4">
+                <div class="text-center mb-5">
+                    <span class="section-label">Got Questions?</span>
+                    <h2 class="section-title fw-bold">Frequently Asked Questions</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">Everything you need to know before stepping into the room.</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="accordion" id="servicesFaq">
+                            <!-- FAQ Item 1 -->
+                            <div class="accordion-item shadow-sm">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Are we actually locked in the room?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#servicesFaq">
+                                    <div class="accordion-body text-muted">
+                                        No, safety is our priority. While the door you enter through remains shut during the game, it is never physically locked. You are free to exit at any time if you feel uncomfortable or need a break.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAQ Item 2 -->
+                            <div class="accordion-item shadow-sm">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        What is the recommended group size?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#servicesFaq">
+                                    <div class="accordion-body text-muted">
+                                        Most of our rooms are designed for groups of 2 to 8 players. If you have a larger group, we recommend booking multiple rooms or inquiring about our VIP buying package option.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAQ Item 3 -->
+                            <div class="accordion-item shadow-sm">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Is there an age limit for players?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#servicesFaq">
+                                    <div class="accordion-body text-muted">
+                                        Our rooms are suitable for ages 12 and up due to puzzle complexity. Players under 16 must be accompanied by an adult, and children under 10 are generally not admitted.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAQ Item 4 -->
+                            <div class="accordion-item shadow-sm">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Can we get hints if we get stuck?
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#servicesFaq">
+                                    <div class="accordion-body text-muted">
+                                        Yes! Each room is monitored by a dedicated Game Master who can provide hints on request if you get stuck, ensuring a fun experience for everyone.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="py-4 bg-dark text-white text-center">
             <div class="container py-4">
                 <h2 class="fw-bold mb-4">Why Choose Our Rooms</h2>
-                <p class="lead">We focus on high-tech immersion over padlocks.</p>
+                <p class="lead mb-4">We focus on high-tech immersion over padlocks.</p>
+                <a href="booking.html" class="btn btn-primary-custom btn-lg">Book Now</a>
             </div>
         </section>
 </main>
@@ -179,13 +487,13 @@
             <div class="row gy-4">
                 <!-- Column 1: Brand -->
                 <div class="col-lg-4 col-md-6">
-                    <a class="d-inline-flex align-items-center text-white text-decoration-none mb-3 fs-4 fw-bold" href="index.html">
-                        <i class="bi bi-door-closed-fill me-2" style="color: var(--primary-color);"></i> EscapeX
+                    <a class="brand-logo text-decoration-none d-inline-flex align-items-center mb-3" href="index.html">
+                        <i class="bi bi-door-closed-fill me-2"></i> EscapeX
                     </a>
                     <p class="text-muted pe-4">The ultimate escape room experience with multiple locations across the country. Challenge your mind.</p>
                     <div class="d-flex gap-3 mt-4">
                         <a href="#" class="fs-5"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="fs-5"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="fs-5"><i class="bi bi-twitter-x"></i></a>
                         <a href="#" class="fs-5"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>

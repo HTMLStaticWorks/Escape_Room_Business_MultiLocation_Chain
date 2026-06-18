@@ -7,7 +7,7 @@ if ($footerMatch.Success) {
     # Escape dollar signs in the replacement string so they aren't treated as regex backreferences
     $safeNewFooter = $newFooter.Replace('$', '$$')
     
-    $htmlFiles = Get-ChildItem -Filter *.html | Where-Object { $_.Name -ne "index.html" }
+    $htmlFiles = Get-ChildItem -Filter *.html | Where-Object { $_.Name -ne "index.html" -and $_.Name -ne "login.html" -and $_.Name -ne "register.html" }
     
     foreach ($file in $htmlFiles) {
         $content = [System.IO.File]::ReadAllText($file.FullName, [System.Text.Encoding]::UTF8)

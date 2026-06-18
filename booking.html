@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Now - EscapeX</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
 <body>
     <!-- Header -->
-    <header class="navbar navbar-expand-lg sticky-top">
+    <header class="navbar navbar-expand-xl sticky-top">
         <div class="container">
             <!-- Logo -->
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <i class="bi bi-door-closed-fill me-2 fs-3 text-primary"></i> EscapeX
+            <a class="brand-logo text-decoration-none d-flex align-items-center" href="index.html">
+                <i class="bi bi-door-closed-fill me-2"></i> EscapeX
             </a>
             
             <!-- Mobile Toggle -->
@@ -24,19 +24,21 @@
             </button>
 
             <!-- Desktop Menu -->
-            <div class="collapse navbar-collapse d-none d-lg-flex justify-content-between" id="desktopMenu">
+            <div class="collapse navbar-collapse d-none d-xl-flex justify-content-between" id="desktopMenu">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home 1</a></li>
                     <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="404.html">404 Page</a></li>
-                    <li class="nav-item"><a class="nav-link" href="coming-soon.html">Coming Soon</a></li>
                 </ul>
-                <div class="d-flex align-items-center gap-3">
+                 <div class="d-flex align-items-center gap-3">
                     <a href="login.html" class="btn-navbar-login">Login</a>
-                    <a href="register.html" class="btn-navbar-signup">Sign Up</a>
+                    <!-- RTL Toggle -->
+                    <button onclick="document.dir = document.dir === 'rtl' ? 'ltr' : 'rtl';" class="btn btn-link text-decoration-none fw-bold p-0 me-1" style="color: var(--text-color); font-size: 0.95rem;">RTL</button>
                     <!-- Theme Toggle -->
                     <button id="theme-toggle" class="btn btn-link p-0 text-decoration-none" style="color: var(--text-color);">
                         <i class="bi bi-sun fs-5"></i>
@@ -49,7 +51,9 @@
     <!-- Mobile Offcanvas Menu -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" style="background-color: var(--header-bg); color: var(--text-color);">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title fw-bold text-primary">EscapeX</h5>
+            <a class="brand-logo text-decoration-none d-flex align-items-center" href="index.html">
+                <i class="bi bi-door-closed-fill me-2"></i> EscapeX
+            </a>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -58,17 +62,21 @@
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="home-2.html">Home 2</a></li>
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="about.html">About Us</a></li>
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="services.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link fs-5 py-2" href="contact.html">Contact</a></li>
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="pricing.html">Pricing</a></li>
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="blog.html">Blog</a></li>
-                <li class="nav-item"><a class="nav-link fs-5 py-2" href="404.html">404 Page</a></li>
-                <li class="nav-item"><a class="nav-link fs-5 py-2" href="coming-soon.html">Coming Soon</a></li>
+                <li class="nav-item"><a class="nav-link fs-5 py-2" href="dashboard.html">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link fs-5 py-2" href="contact.html">Contact</a></li>
             </ul>
             <div class="d-grid gap-2">
-                <a href="login.html" class="btn-navbar-login">Login</a>
-                <a href="register.html" class="btn-navbar-signup">Sign Up</a>
+                <a href="login.html" class="btn-navbar-login mb-2">Login</a>
+                <div class="d-flex gap-2 w-100">
+                    <button onclick="document.dir = document.dir === 'rtl' ? 'ltr' : 'rtl';" class="btn btn-outline-secondary fw-bold w-50 py-2 flex-grow-1" style="color: var(--text-color);">RTL</button>
+                    <button class="btn btn-outline-secondary fw-bold w-50 py-2 flex-grow-1 theme-toggle-btn" style="color: var(--text-color);"><i class="bi bi-sun"></i> Theme</button>
+                </div>
             </div>
         </div>
+    </div>
+
     <main>
         <section class="page-hero" style="background-image: url('assets/images/contact_hero.png');">
             <div class="container py-4">
@@ -82,7 +90,7 @@
                 <div class="row g-3 mb-4">
                     <div class="col-md-4">
                         <div class="position-relative rounded overflow-hidden">
-                            <img src="assets/images/room1.jpg" class="img-fluid w-100" alt="The Heist" style="height:180px;object-fit:cover;">
+                            <img src="assets/images/room1.jpg" class="img-fluid w-100" alt="The Heist" style="aspect-ratio: 16/9; height: auto; object-fit:cover;">
                             <div class="position-absolute bottom-0 start-0 end-0 p-2" style="background:rgba(0,0,0,0.6);">
                                 <strong class="text-white">The Heist</strong>
                             </div>
@@ -90,7 +98,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="position-relative rounded overflow-hidden">
-                            <img src="assets/images/room2.jpg" class="img-fluid w-100" alt="Zombie Outbreak" style="height:180px;object-fit:cover;">
+                            <img src="assets/images/zombie.jpg" class="img-fluid w-100" alt="Zombie Outbreak" style="aspect-ratio: 16/9; height: auto; object-fit:cover;">
                             <div class="position-absolute bottom-0 start-0 end-0 p-2" style="background:rgba(0,0,0,0.6);">
                                 <strong class="text-white">Zombie Outbreak</strong>
                             </div>
@@ -98,7 +106,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="position-relative rounded overflow-hidden">
-                            <img src="assets/images/room3.jpg" class="img-fluid w-100" alt="Asylum" style="height:180px;object-fit:cover;">
+                            <img src="assets/images/asylum.jpg" class="img-fluid w-100" alt="Asylum" style="aspect-ratio: 16/9; height: auto; object-fit:cover;">
                             <div class="position-absolute bottom-0 start-0 end-0 p-2" style="background:rgba(0,0,0,0.6);">
                                 <strong class="text-white">Asylum</strong>
                             </div>
@@ -137,13 +145,13 @@
             <div class="row gy-4">
                 <!-- Column 1: Brand -->
                 <div class="col-lg-4 col-md-6">
-                    <a class="d-inline-flex align-items-center text-white text-decoration-none mb-3 fs-4 fw-bold" href="index.html">
-                        <i class="bi bi-door-closed-fill me-2" style="color: var(--primary-color);"></i> EscapeX
+                    <a class="brand-logo text-decoration-none d-inline-flex align-items-center mb-3" href="index.html">
+                        <i class="bi bi-door-closed-fill me-2"></i> EscapeX
                     </a>
                     <p class="text-muted pe-4">The ultimate escape room experience with multiple locations across the country. Challenge your mind.</p>
                     <div class="d-flex gap-3 mt-4">
                         <a href="#" class="fs-5"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="fs-5"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="fs-5"><i class="bi bi-twitter-x"></i></a>
                         <a href="#" class="fs-5"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>

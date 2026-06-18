@@ -3,34 +3,37 @@
 document.addEventListener("DOMContentLoaded", () => {
     
     // Theme Toggle Logic
-    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn, #theme-toggle');
     const htmlElement = document.documentElement;
     
     // Check local storage for theme
     const savedTheme = localStorage.getItem('theme') || 'dark'; // Default to dark for Escape Room
     htmlElement.setAttribute('data-theme', savedTheme);
-    updateToggleIcon(savedTheme);
+    updateToggleIcons(savedTheme);
 
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', () => {
+    themeToggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
             let currentTheme = htmlElement.getAttribute('data-theme');
             let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             htmlElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
-            updateToggleIcon(newTheme);
+            updateToggleIcons(newTheme);
         });
-    }
+    });
 
-    function updateToggleIcon(theme) {
-        if (!themeToggleBtn) return;
-        const icon = themeToggleBtn.querySelector('i');
-        if (theme === 'dark') {
-            icon.classList.remove('bi-moon');
-            icon.classList.add('bi-sun');
-        } else {
-            icon.classList.remove('bi-sun');
-            icon.classList.add('bi-moon');
-        }
+    function updateToggleIcons(theme) {
+        themeToggleBtns.forEach(btn => {
+            const icon = btn.querySelector('i');
+            if (icon) {
+                if (theme === 'dark') {
+                    icon.classList.remove('bi-moon');
+                    icon.classList.add('bi-sun');
+                } else {
+                    icon.classList.remove('bi-sun');
+                    icon.classList.add('bi-moon');
+                }
+            }
+        });
     }
 
     // Navbar Active State Logic
