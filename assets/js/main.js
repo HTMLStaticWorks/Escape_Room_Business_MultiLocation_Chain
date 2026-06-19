@@ -1,5 +1,21 @@
 /* Main Javascript for Escape Room Template */
 
+// RTL Initial Load
+const savedRtl = localStorage.getItem('rtlMode');
+if (savedRtl === 'true') {
+    document.dir = 'rtl';
+}
+
+window.toggleRTL = function() {
+    if (document.dir === 'rtl') {
+        document.dir = 'ltr';
+        localStorage.setItem('rtlMode', 'false');
+    } else {
+        document.dir = 'rtl';
+        localStorage.setItem('rtlMode', 'true');
+    }
+};
+
 document.addEventListener("DOMContentLoaded", () => {
     
     // Theme Toggle Logic

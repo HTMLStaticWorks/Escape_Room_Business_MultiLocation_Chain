@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="navbar navbar-expand-xl sticky-top">
+    <header class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <!-- Logo -->
             <a class="brand-logo text-decoration-none d-flex align-items-center" href="index.html">
@@ -24,7 +24,7 @@
             </button>
 
             <!-- Desktop Menu -->
-            <div class="collapse navbar-collapse d-none d-xl-flex justify-content-between" id="desktopMenu">
+            <div class="collapse navbar-collapse d-none d-lg-flex justify-content-between" id="desktopMenu">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home 1</a></li>
                     <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
@@ -32,15 +32,15 @@
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                 </ul>
                  <div class="d-flex align-items-center gap-3">
                     <a href="login.html" class="btn-navbar-login">Login</a>
                     <!-- RTL Toggle -->
-                    <button onclick="document.dir = document.dir === 'rtl' ? 'ltr' : 'rtl';" class="btn btn-link text-decoration-none fw-bold p-0 me-1" style="color: var(--text-color); font-size: 0.95rem;">RTL</button>
+                    <button onclick="toggleRTL()" class="btn-navbar-icon">RTL</button>
                     <!-- Theme Toggle -->
-                    <button id="theme-toggle" class="btn btn-link p-0 text-decoration-none" style="color: var(--text-color);">
+                    <button id="theme-toggle" class="btn-navbar-icon">
                         <i class="bi bi-sun fs-5"></i>
                     </button>
                 </div>
@@ -64,13 +64,13 @@
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="services.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="pricing.html">Pricing</a></li>
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="blog.html">Blog</a></li>
-                <li class="nav-item"><a class="nav-link fs-5 py-2" href="dashboard.html">Dashboard</a></li>
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link fs-5 py-2" href="dashboard.html">Dashboard</a></li>
             </ul>
             <div class="d-grid gap-2">
                 <a href="login.html" class="btn-navbar-login mb-2">Login</a>
                 <div class="d-flex gap-2 w-100">
-                    <button onclick="document.dir = document.dir === 'rtl' ? 'ltr' : 'rtl';" class="btn btn-outline-secondary fw-bold w-50 py-2 flex-grow-1" style="color: var(--text-color);">RTL</button>
+                    <button onclick="toggleRTL()" class="btn btn-outline-secondary fw-bold w-50 py-2 flex-grow-1" style="color: var(--text-color);">RTL</button>
                     <button class="btn btn-outline-secondary fw-bold w-50 py-2 flex-grow-1 theme-toggle-btn" style="color: var(--text-color);"><i class="bi bi-sun"></i> Theme</button>
                 </div>
             </div>
@@ -78,7 +78,7 @@
     </div>
 
     <main>
-        <section class="py-4 text-white text-center" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/images/services_hero.png') center/cover no-repeat;">
+        <section class="page-hero text-white text-center" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/images/services_hero.png') center/cover no-repeat;">
             <div class="container py-4">
                 <h1 class="display-4 fw-bold">Our Escape Rooms</h1>
                 <p class="lead">8 immersive experiences to test your wits.</p>
@@ -226,17 +226,17 @@
                 <h2 class="fw-bold mb-5">What to Expect</h2>
                 <div class="row g-4">
                     <div class="col-md-4">
-                        <img src="assets/images/blog1.jpg" alt="60 Minutes" class="mb-3 rounded-circle shadow-sm" style="width: 100px; height: 100px; object-fit: cover; border: 2px solid var(--primary-color);">
+                        <img src="assets/images/expect_time.png" alt="60 Minutes" class="mb-3 rounded-circle shadow-sm" style="width: 100px; height: 100px; object-fit: cover; border: 2px solid var(--primary-color);">
                         <h4>60 Minutes to Escape</h4>
                         <p class="text-muted">The clock is ticking. You have exactly one hour to decipher the clues and break out.</p>
                     </div>
                     <div class="col-md-4">
-                        <img src="assets/images/team1.jpg" alt="Teamwork" class="mb-3 rounded-circle shadow-sm" style="width: 100px; height: 100px; object-fit: cover; border: 2px solid var(--primary-color);">
+                        <img src="assets/images/expect_teamwork.png" alt="Teamwork" class="mb-3 rounded-circle shadow-sm" style="width: 100px; height: 100px; object-fit: cover; border: 2px solid var(--primary-color);">
                         <h4>Teamwork Required</h4>
                         <p class="text-muted">Communication is key. You cannot escape alone. Bring friends, family, or coworkers.</p>
                     </div>
                     <div class="col-md-4">
-                        <img src="assets/images/test_puzzle.jpg" alt="Immersive" class="mb-3 rounded-circle shadow-sm" style="width: 100px; height: 100px; object-fit: cover; border: 2px solid var(--primary-color);">
+                        <img src="assets/images/expect_immersive.png" alt="Immersive" class="mb-3 rounded-circle shadow-sm" style="width: 100px; height: 100px; object-fit: cover; border: 2px solid var(--primary-color);">
                         <h4>Fully Immersive</h4>
                         <p class="text-muted">From the moment you step inside, you are part of the story. Hollywood-level set design awaits.</p>
                     </div>
@@ -249,7 +249,7 @@
             <div class="container">
                 <div class="row align-items-center g-5">
                     <div class="col-lg-6">
-                        <img src="assets/images/admin.jpg" class="img-fluid rounded-4 shadow" alt="Game Master" style="aspect-ratio: 4/3; object-fit: cover; border: 1px solid var(--tertiary-color);">
+                        <img src="assets/images/team_action.png" class="img-fluid rounded-4 shadow" alt="Escape Room Team" style="aspect-ratio: 4/3; object-fit: cover; border: 1px solid var(--tertiary-color);">
                     </div>
                     <div class="col-lg-6">
                         <h2 class="fw-bold mb-4">Difficulty Levels Explained</h2>
@@ -418,11 +418,11 @@
                             <!-- FAQ Item 1 -->
                             <div class="accordion-item shadow-sm">
                                 <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                         Are we actually locked in the room?
                                     </button>
                                 </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#servicesFaq">
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#servicesFaq">
                                     <div class="accordion-body text-muted">
                                         No, safety is our priority. While the door you enter through remains shut during the game, it is never physically locked. You are free to exit at any time if you feel uncomfortable or need a break.
                                     </div>
@@ -473,9 +473,9 @@
             </div>
         </section>
 
-        <section class="py-4 bg-dark text-white text-center">
+        <section class="py-4 text-center" style="background-color: var(--footer-bg); color: var(--footer-text);">
             <div class="container py-4">
-                <h2 class="fw-bold mb-4">Why Choose Our Rooms</h2>
+                <h2 class="fw-bold mb-4" style="color: var(--footer-heading) !important;">Why Choose Our Rooms</h2>
                 <p class="lead mb-4">We focus on high-tech immersion over padlocks.</p>
                 <a href="booking.html" class="btn btn-primary-custom btn-lg">Book Now</a>
             </div>
@@ -553,4 +553,6 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
 

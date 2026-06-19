@@ -26,12 +26,12 @@
   --card-bg: #ffffff;
   --card-border: rgba(0,0,0,0.07);
   --header-bg: rgba(255,255,255,0.95);
-  --footer-bg: #0f0f1a;
-  --footer-text: #9ca3af;
-  --footer-heading: #ffffff;
-  --footer-border: rgba(255,255,255,0.08);
-  --footer-input-bg: rgba(255,255,255,0.08);
-  --footer-input-text: #ffffff;
+  --footer-bg: #f8fafc;
+  --footer-text: #475569;
+  --footer-heading: #0f172a;
+  --footer-border: rgba(0,0,0,0.1);
+  --footer-input-bg: #ffffff;
+  --footer-input-text: #0f172a;
   --section-alt: #e8edf3;
   --input-bg: #ffffff;
   --input-border: #d1d5db;
@@ -54,6 +54,12 @@
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
   --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
   --shadow-lg: 0 10px 40px rgba(0,0,0,0.6);
+  --footer-bg: linear-gradient(180deg, #0a0a18 0%, #050510 100%);
+  --footer-text: #9ca3af;
+  --footer-heading: #ffffff;
+  --footer-border: rgba(255,255,255,0.08);
+  --footer-input-bg: rgba(255,255,255,0.08);
+  --footer-input-text: #ffffff;
 }
 
 /* ============================================================
@@ -71,6 +77,7 @@
 [data-theme="light"] .table-dark {
   --bs-table-bg: var(--card-bg);
   --bs-table-color: var(--text-color);
+  --bs-table-hover-color: var(--text-color);
   --bs-table-border-color: var(--card-border);
   --bs-table-striped-bg: rgba(0,0,0,0.05);
   --bs-table-hover-bg: rgba(0,0,0,0.075);
@@ -109,8 +116,22 @@ img { max-width: 100%; }
 
 /* RTL Support */
 [dir="rtl"] { text-align: right; }
+[dir="rtl"] .list-unstyled { padding-right: 0; }
 [dir="rtl"] .end-0 { right: auto !important; left: 0 !important; }
 [dir="rtl"] .start-0 { left: auto !important; right: 0 !important; }
+[dir="rtl"] .border-end { border-right: 0 !important; border-left: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important; }
+[dir="rtl"] .border-start { border-left: 0 !important; border-right: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important; }
+[dir="rtl"] .me-1 { margin-left: 0.25rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-2 { margin-left: 0.5rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-3 { margin-left: 1rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-4 { margin-left: 1.5rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-5 { margin-left: 3rem !important; margin-right: 0 !important; }
+[dir="rtl"] .ms-1 { margin-right: 0.25rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-2 { margin-right: 0.5rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-3 { margin-right: 1rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-4 { margin-right: 1.5rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-5 { margin-right: 3rem !important; margin-left: 0 !important; }
+[dir="rtl"] .dropdown-toggle::after { margin-left: 0 !important; margin-right: 0.255em !important; }
 
 /* ============================================================
    SCROLLBAR (Dark Mode Premium)
@@ -189,6 +210,7 @@ img { max-width: 100%; }
   border-radius: 6px;
   transition: all 0.25s ease;
   position: relative;
+  white-space: nowrap;
 }
 
 .nav-link::after {
@@ -285,6 +307,31 @@ img { max-width: 100%; }
 }
 
 .btn-navbar-login:hover {
+  background-color: var(--card-bg);
+  border-color: var(--primary-color);
+  color: var(--primary-color) !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-navbar-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  min-width: 38px;
+  padding: 0 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1.5px solid var(--card-border);
+  background: transparent;
+  color: var(--text-color) !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-navbar-icon:hover {
   background-color: var(--card-bg);
   border-color: var(--primary-color);
   color: var(--primary-color) !important;
@@ -699,6 +746,11 @@ section { position: relative; }
   filter: invert(1);
 }
 
+[dir="rtl"] .accordion-button::after {
+  margin-left: 0;
+  margin-right: auto;
+}
+
 .accordion-item {
   background-color: var(--card-bg) !important;
   border-color: var(--card-border) !important;
@@ -722,10 +774,10 @@ section { position: relative; }
    FOOTER — PREMIUM DARK
    ============================================================ */
 footer {
-  background: linear-gradient(180deg, #0a0a18 0%, #050510 100%) !important;
+  background: var(--footer-bg) !important;
   color: var(--footer-text) !important;
   padding: 60px 0 24px;
-  border-top: 1px solid rgba(0,255,136,0.1);
+  border-top: 1px solid var(--footer-border);
 }
 
 footer h5, footer .text-white {
@@ -1054,7 +1106,7 @@ a:not(footer a):has(> .bi-instagram):hover {
 }
 
 @media (max-width: 767.98px) {
-  .hero-section { min-height: 80vh; align-items: flex-end; padding-top: 100px; padding-bottom: 80px; }
+  .hero-section { min-height: 80vh; align-items: flex-end; padding-top: 100px; padding-bottom: 80px; background-position: top center !important; }
   .section-title { font-size: 1.75rem; }
   .pricing-card.featured { transform: scale(1.0); }
 }
@@ -1067,6 +1119,11 @@ a:not(footer a):has(> .bi-instagram):hover {
   border-left: 1px solid rgba(0,255,136,0.1) !important;
 }
 
+[data-theme="light"] .offcanvas {
+  background: var(--bg-color) !important;
+  border-left: 1px solid var(--input-border) !important;
+}
+
 .offcanvas-title { color: var(--primary-color) !important; }
 
 .offcanvas-body .nav-link {
@@ -1076,10 +1133,19 @@ a:not(footer a):has(> .bi-instagram):hover {
   padding: 10px 14px !important;
 }
 
+[data-theme="light"] .offcanvas-body .nav-link {
+  color: var(--text-color) !important;
+}
+
 .offcanvas-body .nav-link:hover,
 .offcanvas-body .nav-link.active {
   background: rgba(0,255,136,0.1);
   color: var(--primary-color) !important;
+}
+
+[data-theme="light"] .offcanvas-body .nav-link:hover,
+[data-theme="light"] .offcanvas-body .nav-link.active {
+  background: rgba(0,0,0,0.05);
 }
 
 /* ============================================================
@@ -1197,6 +1263,7 @@ footer ul.list-unstyled a:hover {
   transform: translateX(4px);
   border-left-color: var(--primary-color);
   background: rgba(255,255,255,0.03);
+  color: #fff !important;
 }
 
 /* List Group Item Hover (Dashboard Messages, etc.) */

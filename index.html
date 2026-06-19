@@ -18,7 +18,7 @@
 <body>
 
     <!-- Header -->
-    <header class="navbar navbar-expand-xl sticky-top">
+    <header class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <!-- Logo -->
             <a class="brand-logo text-decoration-none d-flex align-items-center" href="index.html">
@@ -31,7 +31,7 @@
             </button>
 
             <!-- Desktop Menu -->
-            <div class="collapse navbar-collapse d-none d-xl-flex justify-content-between" id="desktopMenu">
+            <div class="collapse navbar-collapse d-none d-lg-flex justify-content-between" id="desktopMenu">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home 1</a></li>
                     <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
@@ -39,15 +39,15 @@
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                 </ul>
                  <div class="d-flex align-items-center gap-3">
                     <a href="login.html" class="btn-navbar-login">Login</a>
                     <!-- RTL Toggle -->
-                    <button onclick="document.dir = document.dir === 'rtl' ? 'ltr' : 'rtl';" class="btn btn-link text-decoration-none fw-bold p-0 me-1" style="color: var(--text-color); font-size: 0.95rem;">RTL</button>
+                    <button onclick="toggleRTL()" class="btn-navbar-icon">RTL</button>
                     <!-- Theme Toggle -->
-                    <button id="theme-toggle" class="btn btn-link p-0 text-decoration-none" style="color: var(--text-color);">
+                    <button id="theme-toggle" class="btn-navbar-icon">
                         <i class="bi bi-sun fs-5"></i>
                     </button>
                 </div>
@@ -71,13 +71,13 @@
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="services.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="pricing.html">Pricing</a></li>
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="blog.html">Blog</a></li>
-                <li class="nav-item"><a class="nav-link fs-5 py-2" href="dashboard.html">Dashboard</a></li>
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link fs-5 py-2" href="dashboard.html">Dashboard</a></li>
             </ul>
             <div class="d-grid gap-2">
                 <a href="login.html" class="btn-navbar-login mb-2">Login</a>
                 <div class="d-flex gap-2 w-100">
-                    <button onclick="document.dir = document.dir === 'rtl' ? 'ltr' : 'rtl';" class="btn btn-outline-secondary fw-bold w-50 py-2 flex-grow-1" style="color: var(--text-color);">RTL</button>
+                    <button onclick="toggleRTL()" class="btn btn-outline-secondary fw-bold w-50 py-2 flex-grow-1" style="color: var(--text-color);">RTL</button>
                     <button class="btn btn-outline-secondary fw-bold w-50 py-2 flex-grow-1 theme-toggle-btn" style="color: var(--text-color);"><i class="bi bi-sun"></i> Theme</button>
                 </div>
             </div>
@@ -109,7 +109,7 @@
                     <div class="col-md-4">
                         <div class="custom-card h-100">
                             <div class="card-body">
-                                <img src="assets/images/blog1.jpg" alt="60 Minutes" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;" class="mb-3 border border-primary border-2">
+                                <img src="assets/images/60_minutes.png" alt="60 Minutes" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;" class="mb-3 border border-primary border-2">
                                 <h3>60 Minutes</h3>
                                 <p class="text-muted">You have exactly one hour to solve the puzzles and escape.</p>
                             </div>
@@ -118,7 +118,7 @@
                     <div class="col-md-4">
                         <div class="custom-card h-100">
                             <div class="card-body">
-                                <img src="assets/images/team1.jpg" alt="2-8 Players" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;" class="mb-3 border border-primary border-2">
+                                <img src="assets/images/team_players.png" alt="2-8 Players" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;" class="mb-3 border border-primary border-2">
                                 <h3>2-8 Players</h3>
                                 <p class="text-muted">Perfect for date nights, friends, or corporate team building.</p>
                             </div>
@@ -199,11 +199,14 @@
         <!-- Section 4: Video / Promo -->
         <section class="py-4 my-3 text-center">
             <div class="container">
-                <div class="rounded-4 d-flex flex-column align-items-center justify-content-center" style="background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('assets/images/video_preview.jpg') center/cover no-repeat; min-height: 400px; padding: 60px 20px; border: 1px solid var(--card-border);">
-                    <h2 class="fw-bold text-white mb-4 display-5">Watch The Experience</h2>
-                    <div class="position-relative d-inline-block cursor-pointer">
-                        <div style="width: 90px; height: 90px; background: rgba(0,255,136,0.25); border: 2px solid var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px); transition: all 0.3s ease; box-shadow: 0 0 30px var(--primary-glow);" onmouseover="this.style.transform='scale(1.1)'; this.style.backgroundColor='rgba(0,255,136,0.4)';" onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='rgba(0,255,136,0.25)';">
-                            <i class="bi bi-play-fill" style="font-size: 3.5rem; color: #fff; margin-left: 6px;"></i>
+                <div class="position-relative overflow-hidden rounded-4" style="border: 1px solid var(--card-border);">
+                    <img src="assets/images/video_preview_new.png" alt="Video Preview" class="w-100 h-auto d-block">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column align-items-center justify-content-center" style="background: rgba(0,0,0,0.65); padding: 20px;">
+                        <h2 class="fw-bold text-white mb-3 mb-md-4 display-5">Watch The Experience</h2>
+                        <div class="position-relative d-inline-block cursor-pointer">
+                            <div style="width: 80px; height: 80px; background: rgba(0,255,136,0.25); border: 2px solid var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px); transition: all 0.3s ease; box-shadow: 0 0 30px var(--primary-glow);" onmouseover="this.style.transform='scale(1.1)'; this.style.backgroundColor='rgba(0,255,136,0.4)';" onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='rgba(0,255,136,0.25)';">
+                                <i class="bi bi-play-fill" style="font-size: 3rem; color: #fff; margin-left: 6px;"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -267,10 +270,10 @@
         </section>
 
         <!-- Section 8: CTA / Newsletter -->
-        <section class="py-4" style="background-color: var(--tertiary-color); color: #fff;">
+        <section class="py-4" style="background-color: var(--footer-bg); color: var(--footer-text);">
             <div class="container text-center py-4">
-                <h2 class="fw-bold mb-3" style="color: #fff !important;">Ready to Escape?</h2>
-                <p class="mb-4" style="color: rgba(255,255,255,0.8) !important;">Join our newsletter for 10% off your first booking.</p>
+                <h2 class="fw-bold mb-3" style="color: var(--footer-heading) !important;">Ready to Escape?</h2>
+                <p class="mb-4" style="color: var(--footer-text) !important;">Join our newsletter for 10% off your first booking.</p>
                 <form class="d-flex justify-content-center max-w-md mx-auto" style="max-width: 500px; margin: 0 auto;">
                     <input type="email" class="form-control me-2 py-3" placeholder="Enter your email" required>
                     <button class="btn btn-primary-custom" type="submit">Subscribe</button>
@@ -351,5 +354,7 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
 
 

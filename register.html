@@ -11,11 +11,11 @@
 </head>
 <body style="display: flex; align-items: center; justify-content: center; min-height: 100vh; position: relative;">
     <!-- Top Right Toggles -->
-    <div class="position-absolute top-0 end-0 p-4 d-flex gap-2 z-3">
+    <div class="position-fixed top-0 end-0 p-3 p-md-4 d-flex gap-2 z-3">
         <button id="theme-toggle" class="btn btn-outline-secondary rounded-circle" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;" aria-label="Toggle Theme">
             <i class="bi bi-sun fs-5"></i>
         </button>
-        <button onclick="document.dir = document.dir === 'rtl' ? 'ltr' : 'rtl';" class="btn btn-outline-secondary fw-bold rounded-pill px-3" style="height: 44px;">
+        <button onclick="toggleRTL()" class="btn btn-outline-secondary fw-bold rounded-pill px-3" style="height: 44px;">
             RTL
         </button>
     </div>
@@ -44,6 +44,15 @@
                             <div class="position-relative">
                                 <input type="password" class="form-control pe-5" id="registerPassword" placeholder="********">
                                 <button class="btn border-0 position-absolute end-0 top-50 translate-middle-y me-2" type="button" onclick="const p = document.getElementById('registerPassword'); const i = this.querySelector('i'); if(p.type === 'password'){p.type='text'; i.classList.replace('bi-eye', 'bi-eye-slash');}else{p.type='password'; i.classList.replace('bi-eye-slash', 'bi-eye');}" style="background: transparent; z-index: 5;">
+                                    <i class="bi bi-eye text-muted"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label">Confirm Password</label>
+                            <div class="position-relative">
+                                <input type="password" class="form-control pe-5" id="confirmPassword" placeholder="********">
+                                <button class="btn border-0 position-absolute end-0 top-50 translate-middle-y me-2" type="button" onclick="const p = document.getElementById('confirmPassword'); const i = this.querySelector('i'); if(p.type === 'password'){p.type='text'; i.classList.replace('bi-eye', 'bi-eye-slash');}else{p.type='password'; i.classList.replace('bi-eye-slash', 'bi-eye');}" style="background: transparent; z-index: 5;">
                                     <i class="bi bi-eye text-muted"></i>
                                 </button>
                             </div>

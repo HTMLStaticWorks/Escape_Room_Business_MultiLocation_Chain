@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="navbar navbar-expand-xl sticky-top">
+    <header class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <!-- Logo -->
             <a class="brand-logo text-decoration-none d-flex align-items-center" href="index.html">
@@ -24,7 +24,7 @@
             </button>
 
             <!-- Desktop Menu -->
-            <div class="collapse navbar-collapse d-none d-xl-flex justify-content-between" id="desktopMenu">
+            <div class="collapse navbar-collapse d-none d-lg-flex justify-content-between" id="desktopMenu">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home 1</a></li>
                     <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
@@ -32,15 +32,15 @@
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                 </ul>
                  <div class="d-flex align-items-center gap-3">
                     <a href="login.html" class="btn-navbar-login">Login</a>
                     <!-- RTL Toggle -->
-                    <button onclick="document.dir = document.dir === 'rtl' ? 'ltr' : 'rtl';" class="btn btn-link text-decoration-none fw-bold p-0 me-1" style="color: var(--text-color); font-size: 0.95rem;">RTL</button>
+                    <button onclick="toggleRTL()" class="btn-navbar-icon">RTL</button>
                     <!-- Theme Toggle -->
-                    <button id="theme-toggle" class="btn btn-link p-0 text-decoration-none" style="color: var(--text-color);">
+                    <button id="theme-toggle" class="btn-navbar-icon">
                         <i class="bi bi-sun fs-5"></i>
                     </button>
                 </div>
@@ -64,13 +64,13 @@
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="services.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="pricing.html">Pricing</a></li>
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="blog.html">Blog</a></li>
-                <li class="nav-item"><a class="nav-link fs-5 py-2" href="dashboard.html">Dashboard</a></li>
                 <li class="nav-item"><a class="nav-link fs-5 py-2" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link fs-5 py-2" href="dashboard.html">Dashboard</a></li>
             </ul>
             <div class="d-grid gap-2">
                 <a href="login.html" class="btn-navbar-login mb-2">Login</a>
                 <div class="d-flex gap-2 w-100">
-                    <button onclick="document.dir = document.dir === 'rtl' ? 'ltr' : 'rtl';" class="btn btn-outline-secondary fw-bold w-50 py-2 flex-grow-1" style="color: var(--text-color);">RTL</button>
+                    <button onclick="toggleRTL()" class="btn btn-outline-secondary fw-bold w-50 py-2 flex-grow-1" style="color: var(--text-color);">RTL</button>
                     <button class="btn btn-outline-secondary fw-bold w-50 py-2 flex-grow-1 theme-toggle-btn" style="color: var(--text-color);"><i class="bi bi-sun"></i> Theme</button>
                 </div>
             </div>
@@ -78,7 +78,7 @@
     </div>
 
     <main>
-        <section class="py-4 text-white text-center" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/images/services_hero.png') center/cover no-repeat;">
+        <section class="page-hero text-white text-center" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/images/services_hero.png') center/cover no-repeat;">
             <div class="container py-4">
                 <span class="badge bg-warning text-dark mb-3">Hard Difficulty</span>
                 <h1 class="display-4 fw-bold">The Heist</h1>
@@ -194,4 +194,6 @@
     </div>
 </body>
 </html>
+
+
 
