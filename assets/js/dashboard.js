@@ -16,4 +16,20 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // Auto-close sidebar on mobile/tablet when clicking any dashboard navigation link
+    if (sidebar) {
+        const sidebarLinks = sidebar.querySelectorAll('#dashboardTabs .nav-link');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 1200) { // xl breakpoint is 1200px
+                    const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(sidebar);
+                    if (bsOffcanvas) {
+                        bsOffcanvas.hide();
+                    }
+                }
+            });
+        });
+    }
 });
+

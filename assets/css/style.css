@@ -469,14 +469,6 @@ img { max-width: 100%; }
   z-index: 0;
 }
 
-.page-hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary-color), #00bfff, var(--secondary-color));
-  z-index: 2;
-}
 
 .page-hero .container { position: relative; z-index: 1; }
 
@@ -991,6 +983,21 @@ a:not(footer a):has(> .bi-instagram):hover {
 
 [data-theme="light"] .sidebar .nav-link:hover:not(.active) {
   color: var(--text-color) !important;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.sidebar-admin-link {
+  color: var(--text-color) !important;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+
+.sidebar-admin-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="light"] .sidebar-admin-link:hover {
   background: rgba(0, 0, 0, 0.04);
 }
 
