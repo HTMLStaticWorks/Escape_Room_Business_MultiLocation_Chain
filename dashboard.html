@@ -18,11 +18,11 @@
         <!-- Sidebar -->
         <div class="sidebar offcanvas-lg offcanvas-start d-flex flex-column p-3" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel" style="width: 250px;">
             <div class="offcanvas-header d-lg-none mb-2 px-1">
-                <h5 class="offcanvas-title text-white fw-bold d-flex align-items-center" id="sidebarLabel"><i class="bi bi-door-closed-fill text-primary me-2 fs-4"></i>EscapeX</h5>
+                <h5 class="offcanvas-title text-white fw-bold d-flex align-items-center" id="sidebarLabel"><i class="bi bi-door-closed-fill me-2 fs-4"></i>EscapeX</h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#sidebar" aria-label="Close"></button>
             </div>
-            <a href="index.html" class="d-none d-lg-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none" style="color: #fff !important;">
-                <i class="bi bi-door-closed-fill me-2 fs-4 text-primary"></i>
+            <a href="index.html" class="d-none d-lg-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none sidebar-brand-link">
+                <i class="bi bi-door-closed-fill me-2 fs-4"></i>
                 <span class="fs-4 fw-bold">EscapeX</span>
             </a>
             <hr class="d-none d-lg-block">
@@ -68,14 +68,12 @@
 
         <!-- Page Content -->
         <div id="page-content-wrapper" class="flex-grow-1 d-flex flex-column min-vh-100" style="background-color: var(--bg-color); min-width: 0;">
-            <nav class="navbar navbar-expand-lg border-bottom px-3" style="background-color: var(--header-bg);">
+            <nav class="navbar navbar-expand-lg border-bottom px-3 sticky-top flex-nowrap" style="background-color: var(--header-bg); z-index: 1020;">
                 <button class="btn btn-outline-secondary d-lg-none me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
                     <i class="bi bi-list"></i>
                 </button>
-                <span class="fs-5 fw-bold d-lg-none" style="color: var(--text-color);">EscapeX Admin</span>
-                <div class="ms-auto d-flex align-items-center">
-                    <button onclick="toggleRTL()" class="btn-navbar-icon me-2">RTL</button>
-                    <button id="theme-toggle" class="btn-navbar-icon me-2"><i class="bi bi-sun"></i></button>
+                <span class="fs-5 fw-bold d-lg-none" style="color: var(--text-color);">Welcome</span>
+                <div class="ms-auto d-flex align-items-center gap-3">
                     <div class="dropdown">
                         <a href="#" class="d-flex align-items-center text-decoration-none" style="color: var(--text-color);" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="assets/images/admin.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
@@ -89,98 +87,16 @@
                             <li><a class="dropdown-item" href="login.html">Sign out</a></li>
                         </ul>
                     </div>
+                    <button onclick="toggleRTL()" class="btn-navbar-icon">RTL</button>
+                    <button id="theme-toggle" class="btn-navbar-icon"><i class="bi bi-sun"></i></button>
                 </div>
             </nav>
 
             <div class="container-fluid p-4 flex-grow-1">
-<div class="tab-content" id="dashboardTabContent">
-                <div class="tab-pane fade show active" id="analytics">
-                    <section>
-                        <h1 class="mt-2 mb-4">Dashboard Analytics</h1>
-                        <div class="row g-4">
-                            <div class="col-md-3">
-                                <div class="custom-card p-3 d-flex align-items-center justify-content-between">
-                                    <div>
-                                        <h6 class="text-muted">Total Bookings</h6>
-                                        <h3>1,245</h3>
-                                    </div>
-                                    <i class="bi bi-calendar-check fs-1 text-primary"></i>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="custom-card p-3 d-flex align-items-center justify-content-between">
-                                    <div>
-                                        <h6 class="text-muted">Active Users</h6>
-                                        <h3>3,890</h3>
-                                    </div>
-                                    <img src="assets/images/team1.jpg" alt="Active Users" style="width: 56px; height: 56px; object-fit: cover; border-radius: 50%; border: 2px solid var(--primary-color);">
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="my-4">
-                        <h3 class="mb-3">Recent Bookings</h3>
-                        <div class="table-responsive">
-                            <table class="table table-dark table-hover">
-                                <thead><tr><th>ID</th><th>User</th><th>Room</th><th>Status</th></tr></thead>
-                                <tbody><tr><td>#1234</td><td>John Doe</td><td>The Heist</td><td><span class="badge bg-success">Confirmed</span></td></tr></tbody>
-                            </table>
-                        </div>
-                    </section>
-                    <section>
-                        <h3 class="mb-3">Quick Actions</h3>
-                        <div class="d-flex gap-3">
-                            <button class="btn btn-primary-custom">Add Room</button>
-                            <button class="btn btn-outline-secondary text-white">View Reports</button>
-                        </div>
-                    </section>
+                <div class="mb-4">
+                    <h2 class="fw-bold mb-1" style="color: var(--text-color);">Welcome Back!</h2>
+                    <p class="text-muted mb-0">Here is the latest update for your escape room business.</p>
                 </div>
-
-                <div class="tab-pane fade" id="users">
-                    <h1 class="mt-2 mb-4">User Management</h1>
-                    <div class="custom-card p-4">
-                        <p>Manage all registered users, their bookings, and account status here.</p>
-                        <div class="table-responsive">
-                            <table class="table table-dark table-hover">
-                                <thead><tr><th>Name</th><th>Email</th><th>Total Bookings</th><th>Status</th></tr></thead>
-                                <tbody>
-                                    <tr><td>John Doe</td><td>john@example.com</td><td>3</td><td><span class="badge bg-success">Active</span></td></tr>
-                                    <tr><td>Jane Smith</td><td>jane@example.com</td><td>1</td><td><span class="badge bg-success">Active</span></td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tab-pane fade" id="orders">
-                    <h1 class="mt-2 mb-4">Orders & Bookings</h1>
-                    <div class="custom-card p-4">
-                        <p>View all recent transactions and upcoming room reservations.</p>
-                        <button class="btn btn-primary-custom mb-3">Export Orders to CSV</button>
-                        <div class="table-responsive">
-                            <table class="table table-dark table-hover">
-                                <thead><tr><th>Order ID</th><th>Date</th><th>Amount</th><th>Status</th></tr></thead>
-                                <tbody>
-                                    <tr><td>ORD-991</td><td>2026-06-16</td><td>$120.00</td><td><span class="badge bg-success">Paid</span></td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tab-pane fade" id="messages">
-                    <h1 class="mt-2 mb-4">Messages</h1>
-                    <div class="custom-card p-4">
-                        <p>Respond to customer inquiries and support tickets.</p>
-                        <div class="list-group">
-                            <a href="#" class="list-group-item list-group-item-action bg-dark text-white border-secondary">
-                                <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-1">Question about Mars Rescue</h5>
-                                    <small>3 days ago</small>
-                                </div>
-                                <p class="mb-1">Is this room suitable for children under 12?</p>
-                                <small>From: Alice</small>
-            <div class="container-fluid p-4 flex-grow-1">
                 <div class="tab-content" id="dashboardTabContent">
                     <div class="tab-pane fade show active" id="analytics">
                         <section>

@@ -121,16 +121,30 @@ img { max-width: 100%; }
 [dir="rtl"] .start-0 { left: auto !important; right: 0 !important; }
 [dir="rtl"] .border-end { border-right: 0 !important; border-left: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important; }
 [dir="rtl"] .border-start { border-left: 0 !important; border-right: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important; }
+[dir="rtl"] .text-start { text-align: right !important; }
+[dir="rtl"] .text-end { text-align: left !important; }
 [dir="rtl"] .me-1 { margin-left: 0.25rem !important; margin-right: 0 !important; }
 [dir="rtl"] .me-2 { margin-left: 0.5rem !important; margin-right: 0 !important; }
 [dir="rtl"] .me-3 { margin-left: 1rem !important; margin-right: 0 !important; }
 [dir="rtl"] .me-4 { margin-left: 1.5rem !important; margin-right: 0 !important; }
+[dir="rtl"] .pe-4 { padding-left: 1.5rem !important; padding-right: 0 !important; }
+[dir="rtl"] .ps-4 { padding-right: 1.5rem !important; padding-left: 0 !important; }
 [dir="rtl"] .me-5 { margin-left: 3rem !important; margin-right: 0 !important; }
 [dir="rtl"] .ms-1 { margin-right: 0.25rem !important; margin-left: 0 !important; }
 [dir="rtl"] .ms-2 { margin-right: 0.5rem !important; margin-left: 0 !important; }
 [dir="rtl"] .ms-3 { margin-right: 1rem !important; margin-left: 0 !important; }
 [dir="rtl"] .ms-4 { margin-right: 1.5rem !important; margin-left: 0 !important; }
 [dir="rtl"] .ms-5 { margin-right: 3rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-auto,
+[dir="rtl"] .ms-md-auto {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+[dir="rtl"] .me-auto,
+[dir="rtl"] .me-md-auto {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
 [dir="rtl"] .dropdown-toggle::after { margin-left: 0 !important; margin-right: 0.255em !important; }
 
 /* ============================================================
@@ -510,10 +524,13 @@ section[style*="linear-gradient"] span {
   overflow: hidden;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .custom-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-8px) translateZ(0);
   box-shadow: var(--shadow-lg);
 }
 
@@ -924,6 +941,15 @@ a:not(footer a):has(> .bi-instagram):hover {
   border-right: 1px solid rgba(255,255,255,0.06);
 }
 
+.sidebar-brand-link {
+  color: #fff !important;
+}
+
+.sidebar-brand-link i,
+#sidebarLabel i {
+  color: var(--primary-color) !important;
+}
+
 .sidebar .nav-link {
   color: #94a3b8 !important;
   border-radius: 10px;
@@ -938,6 +964,34 @@ a:not(footer a):has(> .bi-instagram):hover {
   background: linear-gradient(135deg, var(--primary-color), #00bfff);
   color: #000 !important;
   box-shadow: 0 4px 16px var(--primary-glow);
+}
+
+/* Light Theme Sidebar Overrides */
+[data-theme="light"] .sidebar {
+  background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+  border-right: 1px solid var(--card-border);
+  color: var(--text-color);
+}
+
+[data-theme="light"] .sidebar-brand-link {
+  color: var(--text-color) !important;
+}
+
+[data-theme="light"] .sidebar hr {
+  border-color: var(--card-border) !important;
+}
+
+[data-theme="light"] .sidebar .btn-close-white {
+  filter: none !important;
+}
+
+[data-theme="light"] .sidebar .nav-link {
+  color: var(--text-muted) !important;
+}
+
+[data-theme="light"] .sidebar .nav-link:hover:not(.active) {
+  color: var(--text-color) !important;
+  background: rgba(0, 0, 0, 0.04);
 }
 
 /* Dashboard stat cards */
@@ -1106,7 +1160,7 @@ a:not(footer a):has(> .bi-instagram):hover {
 }
 
 @media (max-width: 767.98px) {
-  .hero-section { min-height: 80vh; align-items: flex-end; padding-top: 100px; padding-bottom: 80px; background-position: top center !important; }
+  .hero-section { min-height: 80vh; align-items: flex-end; padding-top: 180px !important; padding-bottom: 60px !important; background-position: top center !important; }
   .section-title { font-size: 1.75rem; }
   .pricing-card.featured { transform: scale(1.0); }
 }
